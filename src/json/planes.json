@@ -371,36 +371,5 @@
       "start": "1976-01-01T00:00:00",
       "end": "now"
     }
-  },
-  {
-    "id": "p-13",
-    "aircraftType": "plane",
-    "url": {
-      "wikipedia": "https://ru.wikipedia.org/wiki/Chengdu_J-20",
-      "main": "https://upload.wikimedia.org/wikipedia/commons/a/a2/J-20_at_Airshow_China_2016.jpg",
-      "promotional": "https://lh3.googleusercontent.com/pw/AP1GczOTj8ZD9RuRaphQgMDL1v_TlbRuOvT4XQ4pjOtVNkYlJ5UOMLlgS2ICFEuqTO0GCdstNp2fc8Afqji071tQzaHeqhw43MgrFt3tqqcpUHvPm9Mu6GX8uowuspCGXYyHAHl84SXBllsrKX-mWmcXNEkG=w1345-h1007-s-no-gm?authuser=0",
-      "actual": [
-        "/airplane-model-store3-state1/images/planes-actual/j-20-comp-1.jpg",
-        "/airplane-model-store3-state1/images/planes-actual/j-20-comp-2.jpg",
-        "/airplane-model-store3-state1/images/planes-actual/j-20-comp-3.jpg",
-        "/airplane-model-store3-state1/images/planes-actual/j-20-comp-4.jpg"
-      ]
-    },
-    "name": {
-      "brief": "P-40",
-      "full": "Chengdu J-20",
-      "nickname": "Чорний орел"
-    },
-    "info": {
-      "year": 2011,
-      "country": "Китай",
-      "type": "Важкий винищувач четвертого (п'ятого) покоління",
-      "price": "$100–120 млн",
-      "description": "Вважається одним із ключових досягнень у сфері військової авіації для Китаю і є першим китайським винищувачем п'ятого покоління, призначеним для виконання ролі багатофункціонального винищувача"
-    },
-    "manufacturing": {
-      "start": "1976-01-01T00:00:00",
-      "end": "now"
-    }
   }
 ]

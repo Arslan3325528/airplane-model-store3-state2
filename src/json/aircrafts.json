@@ -434,5 +434,36 @@
       "start": "1976-01-01T00:00:00",
       "end": "now"
     }
+  },
+  {
+    "id": "id-15",
+    "aircraftType": "plane",
+    "url": {
+      "wikipedia": "https://ru.wikipedia.org/wiki/Curtiss_P-40",
+      "main": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Curtiss_XP-40_in_flight%2C_circa_in_1939.jpg",
+      "promotional": "https://lh3.googleusercontent.com/pw/AP1GczPVUh2QNTe-S7ZnF0ZhsLUFOoiALMpgHzF114m8Dv_V8iLTmTvEZQdPegeDII1QkIcJP-h1z_krpPfhDFawnK3vKsQ8NiAC8qcvCBZcDpWO-xJAnZHDOLX5wDC-haY__w4QWtqjifph2bxJVWD57RUe=w1358-h907-s-no-gm?authuser=0",
+      "actual": [
+        "/airplane-model-store3-state1/images/planes-actual/p-40-comp-1.jpg",
+        "/airplane-model-store3-state1/images/planes-actual/p-40-comp-2.jpg",
+        "/airplane-model-store3-state1/images/planes-actual/p-40-comp-3.jpg",
+        "/airplane-model-store3-state1/images/planes-actual/p-40-comp-4.jpg"
+      ]
+    },
+    "name": {
+      "brief": "P-40",
+      "full": "Curtiss P-40 Warhawk",
+      "nickname": "Бойовий яструб (Уорхок) («Warhawk»)"
+    },
+    "info": {
+      "year": 1936,
+      "country": "США",
+      "type": "Винищувач, штурмовик",
+      "price": "$44892 ($650000)",
+      "description": "Використовувався для знищення наземних цілей, колон техніки, складів та аеродромів. Мав дуже міцну конструкцію та рідинне охолодження, захищене бронею. Міг витримувати сильний вогонь із землі та повертатися на базу з величезними пробоїнами, але поступався німецьким Messerschmitt Bf-109 та японським Zero у маневреності чи скоропідйомності на великих висотах"
+    },
+    "manufacturing": {
+      "start": "1939-01-01T00:00:00",
+      "end": "1944-01-01T00:00:00"
+    }
   }
 ]
