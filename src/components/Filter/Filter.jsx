@@ -37,7 +37,7 @@ import css from "./Filter.module.css";
 // };
 
 //! Звичайний компонент
-export function Filter({ onAll, onPlanes, onHelicopters }) {
+export function Filter ({ onAll, onPlanes, onHelicopters }) {
   return (
     <div className={css.filterBox}>
       <button

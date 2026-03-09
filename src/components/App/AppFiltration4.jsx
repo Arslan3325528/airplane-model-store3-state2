@@ -2,13 +2,13 @@ import React, { Component } from "react";
 
 import { Section } from '@/components/Section/Section.jsx';
 import { PlanesList } from '@/components/PlanesList/PlanesList.jsx';
-import { Filter } from '@/components/Filter/Filter.jsx';
+import { Filter4 } from '@/components/Filter/Filter4.jsx';
 
 import aircrafts from '@/json/aircrafts.json';
 
 
 //! Компонент-клас
-export class AppFiltration3 extends Component {
+export class AppFiltration4 extends Component {
   state = {
     aircraftsArr: aircrafts,
     aircraftsTitle: "Магазин моделей літальних апаратів"
@@ -24,12 +24,20 @@ export class AppFiltration3 extends Component {
   };
   planeFiltration = () => {
     console.log("Клік в кнопку Planes");
-    const onlyPlanes = aircrafts.filter(aircraft => aircraft.aircraftType === "plane" || aircraft.aircraftType === "biplane");
+    const onlyPlanes = aircrafts.filter(aircraft => aircraft.aircraftType === "plane");
     console.log("onlyPlanes:", onlyPlanes);
     this.setState({
-      // aircraftsArr: onlyPlanes,
-      aircraftsArr: aircrafts.filter(aircraft => aircraft.aircraftType === "plane" || aircraft.aircraftType === "biplane"),
+      aircraftsArr: onlyPlanes,
       aircraftsTitle: "Магазин моделей літаків"
+    });
+  };
+  biplaneFiltration = () => {
+    console.log("Клік в кнопку Biplane");
+    const onlyBiplane = aircrafts.filter(aircraft => aircraft.aircraftType === "biplane");
+    console.log("onlyBiplane:", onlyBiplane);
+    this.setState({
+      aircraftsArr: onlyBiplane,
+      aircraftsTitle: "Магазин моделей біпланів"
     });
   };
   helicopterFiltration = () => {
@@ -46,9 +54,10 @@ export class AppFiltration3 extends Component {
     return (
       <>
         {/*//!  Filter */}
-        <Filter
+        <Filter4
           onAll={this.allFiltration}
           onPlanes={this.planeFiltration}
+          onBiplanes={this.biplaneFiltration}
           onHelicopters={this.helicopterFiltration}
         />
 
