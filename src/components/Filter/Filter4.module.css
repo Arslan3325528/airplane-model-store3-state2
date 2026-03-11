@@ -35,7 +35,6 @@
 .buttonAllFiltration {
     composes: button;
     border: 6px green solid;
-    /* outline: 6px green solid; */
 }
 
 .buttonPlaneFiltration {
@@ -52,6 +51,7 @@
     composes: button;
     border: 6px #9accf5 solid;
 }
+
 /*//! Візуалізація активної кнопки */
 .active {
     color: #c51900;

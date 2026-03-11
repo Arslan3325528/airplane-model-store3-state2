@@ -35,17 +35,15 @@
 .buttonAllFiltration {
     composes: button;
     border: 6px green solid;
-    /* outline: 6px green solid; */
 }
 
 .buttonPlaneFiltration {
     composes: button;
-    border: 6px #f59aa9 solid;
-    outline: 6px yellow solid;
+    border: 6px yellow solid;
+    outline: 6px #f59aa9 solid;
 }
 
 .buttonHelicopterFiltration {
     composes: button;
     border: 6px #9accf5 solid;
-    /* outline: 6px #9accf5 solid; */
 }

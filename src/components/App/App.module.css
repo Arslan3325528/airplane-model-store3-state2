@@ -5,7 +5,7 @@
     z-index: 1;
     display: flex;
     justify-content: space-evenly;
-    border: 2px solid #9c9c9c;
+    border: 8px solid #719e7091;
     border-radius: 16px;
     background-color: #c0dec9e9;
     /* outline: 1px red solid; */
@@ -13,7 +13,7 @@
 
 .button {
     margin: 20px auto;
-    padding: 16px 32px;
+    padding: 16px 20px;
     display: inline-block;
     align-items: center;
     font-family: Franklin Gothic Medium, Arial Narrow;
@@ -34,15 +34,15 @@
 
 .buttonAllFiltration {
     composes: button;
-    outline: 6px green solid;
+    border: 6px green solid;
 }
 
 .buttonPlaneFiltration {
     composes: button;
-    outline: 6px yellow solid;
+    border: 6px yellow solid;
 }
 
 .buttonHelicopterFiltration {
     composes: button;
-    outline: 6px #f59aa9 solid;
+    border: 6px #9accf5 solid;
 }

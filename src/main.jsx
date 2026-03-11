@@ -14,6 +14,7 @@ import './index.css';
 // import { AppFiltration4 } from '@/components/App/AppFiltration4.jsx';
 //! Aбсолютний шлях + Реекспорт
 import {
+  App,
   AppCounter,
   AppFiltration1,
   AppFiltration2,
