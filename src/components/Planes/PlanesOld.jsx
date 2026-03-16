@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
-import { ActualImageModal } from '@/components/ActualImageModal/ActualImageModal.jsx'; //? Модальні вікна для блока зображень з бібліотекою Yet Another React Lightbox
 import css from "./Planes.module.css"; 
-import defaultImage from "@/components/default.jpg"; 
+import defaultImage from "@/components/default.jpg";
 
 //! Бібліотека react-icons
 import { AiOutlineFlag, AiOutlineInfoCircle, AiOutlineClockCircle, AiOutlineDollarCircle } from "react-icons/ai";
@@ -53,8 +52,7 @@ export function Planes({
       <img src={urlPromotional} alt={nameBrief} className="promotionalImage" />
       {/*//! заголовок зображень */}
       <h4 className={css.imageTitles}><CiAirportSign1 size={iconSize.lg} className={css.iconImageTitles} /> Реальна модель:</h4>
-      {/* //? Блок зображень без модальни вікон */}
-      {/* <div className={css.actualImageBox}>
+      <div className={css.actualImageBox}>
         {urlActual.map(item =>
           <img
             key={item} //* вже унікальний 
@@ -63,12 +61,7 @@ export function Planes({
             className={css.actualImage}
           />
         )}
-      </div> */}
-      {/* //? Модальні вікна для блока зображень з Yet Another React Lightbox */}
-      <ActualImageModal
-        images={urlActual}
-        nameBrief={nameBrief}
-      />
+      </div>
       <button
         type="button"
         className={css.planeButton}

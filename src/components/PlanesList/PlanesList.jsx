@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import css from "./PlanesList.module.css"; 
-import { Planes } from '@/components/Planes/Planes.jsx'; 
+// import { Planes } from '@/components/Planes/PlanesOld.jsx'; //? Блок зображень без модальни вікон */ 
+import { Planes } from '@/components/Planes/Planes.jsx'; //? Модальні вікна для блока зображень з Yet Another React Lightbox
+
 import { getBgColorCSSModule } from '@/utils'; 
 
 
