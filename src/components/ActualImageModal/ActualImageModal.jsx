@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import css from "./ActualImageModal.module.css"; 
 
-//? Бібліотека для модальних вікон - React Image Lightbox
+//? Бібліотека для модальних вікон: Yet Another React Lightbox
 //❌ npm install yet-another-react-lightbox - ❌так може не працювати
 //✅ npm install yet-another-react-lightbox --legacy-peer-deps
 import Lightbox from "yet-another-react-lightbox";
