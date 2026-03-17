@@ -68,6 +68,8 @@ export function Planes({
       <ActualImageModal
         images={urlActual}
         nameBrief={nameBrief}
+        nameFull={nameFull}
+        description={description}
       />
       <button
         type="button"

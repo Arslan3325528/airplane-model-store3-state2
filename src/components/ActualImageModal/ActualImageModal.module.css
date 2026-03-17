@@ -11,11 +11,11 @@
     max-width: calc((100% - 10px) / 2);
     border-radius: 4px;
     cursor: pointer; /*! + */
-    transition: 500ms; /*! + */
+    transition: transform 500ms; /*! + */
 }
 
 /*! + */
 .actualImage:hover {
-    scale: 1.05;
-    outline: 3px solid #feefa9;
+    transform: scale(1.03);
+    outline: 3px solid #ff9111;
 }
