@@ -82,7 +82,18 @@ export class ActualImageModal extends Component {
           // plugins={[Download]}
           // plugins={[Slideshow]}
           // plugins={[Counter]}
-          counter={{ container: { style: { top: "4vh", bottom: "unset", left: "50vw", color: "red", fontWight: 700} } }}
+          counter={{
+            container: {
+              style: {
+                top: "4vh",
+                bottom: "unset",
+                left: "5vw",
+                fontSize: "1.1em",
+                fontWeight: 900,
+                color: "red",
+              }
+            }
+          }}
           // plugins={[Captions]}
             captions={{
               showToggle: true,
