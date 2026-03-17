@@ -53,7 +53,7 @@ export class ActualImageModal extends Component {
       src,
       title: nameFull,
       description: description,
-      share: { url: src, title: nameBrief }, 
+      // share: { url: src, title: nameBrief }, //? для плагіна  Share
     }));
 
     return (
@@ -112,7 +112,7 @@ export class ActualImageModal extends Component {
         // plugins={[Fullscreen, Zoom, Download, Slideshow, Counter]}
         // plugins={[Fullscreen, Zoom, Download, Slideshow, Counter, Captions]}
         // plugins={[Fullscreen, Zoom, Download, Slideshow, Counter, Captions, Share]}
-        plugins={[Fullscreen, Zoom, Download, Slideshow, Counter, Captions, Share, Thumbnails]}
+        plugins={[Fullscreen, Zoom, Download, Slideshow, Counter, Captions, Thumbnails]}
         />
       </div>
     );
