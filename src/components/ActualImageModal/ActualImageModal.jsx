@@ -41,13 +41,15 @@ export class ActualImageModal extends Component {
   };
 
   render() {
-    const { images, nameBrief, nameFull, description } = this.props;
+    const { images, imagesFull, nameBrief, nameFull, description } = this.props;
     const { open, index } = this.state;
 
     //! Масив об'єктів зображень для Lightbox
+    if (imagesFull.length === 0) imagesFull.push(...images); //todo: тимчасово, бо немає всіх imagesFull
     // const slides = images.map((src) => ({ src }));
+    // const slides = imagesFull.map((src) => ({ src }));
     //? Для плагіна Captions і Share
-    const slides = images.map((src) => ({
+    const slides = imagesFull.map((src) => ({
       src,
       title: nameFull,
       description: description,

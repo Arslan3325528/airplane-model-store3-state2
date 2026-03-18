@@ -20,6 +20,7 @@ export function PlanesList({ items }) {
                         urlMain={item.url.main}
                         urlPromotional={item.url.promotional}
                         urlActual={item.url.actual}
+                        urlActualFull={item.url.actualFull}
                         nameBrief={item.name.brief}
                         nameFull={item.name.full}
                         nickname={item.name.nickname}
