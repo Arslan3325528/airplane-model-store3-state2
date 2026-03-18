@@ -9,9 +9,9 @@ import planes from '@/json/planes.json';
 import helicopters from '@/json/helicopters.json';
 // import { planes, helicopters } from '@/json'; //! ❌ так не працює
 
-
 //! Збільшення/Зменьшення на 1
 import { Counter } from '@/components/Counter/Counter.jsx';
+
 
 //! Звичайний компонент
 // export function App() {

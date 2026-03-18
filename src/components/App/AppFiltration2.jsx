@@ -53,17 +53,26 @@ export class AppFiltration2 extends Component {
         />
 
         {/*//! Літаки */}
-        <Section isOn={this.state.isPlanes} title="Магазин моделей літаків">
+        <Section
+          isOn={this.state.isPlanes}
+          title="Магазин моделей літаків"
+        >
           <PlanesList items={planes} />
         </Section >
 
         {/*//! Вертольоти */}
-        <Section isOn={this.state.isHelicopters} title="Магазин моделей вертольотів">
+        <Section
+          isOn={this.state.isHelicopters}
+          title="Магазин моделей вертольотів"
+        >
           <PlanesList items={helicopters} />
         </Section >
 
         {/*//! ВСІ */}
-        <Section isOn={this.state.isAll} title="Магазин моделей літальних апаратів">
+        <Section
+          isOn={this.state.isAll}
+          title="Магазин моделей літальних апаратів"
+        >
           <PlanesList items={aircrafts} />
         </Section >
       </>

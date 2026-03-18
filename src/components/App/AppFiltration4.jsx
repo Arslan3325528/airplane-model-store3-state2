@@ -69,7 +69,7 @@ export class AppFiltration4 extends Component {
           onPlanes={this.planeFiltration}
           onBiplanes={this.biplaneFiltration}
           onHelicopters={this.helicopterFiltration}
-          filterButton={this.state.activeButton}
+          filterButton={this.state.activeButton} //! Візуалізація активної кнопки
         />
 
         {/*//! ВСІ */}

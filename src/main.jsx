@@ -23,7 +23,6 @@ import {
 } from '@/components/App';
 
 
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter basename="/airplane-model-store3-state1">
@@ -38,4 +37,3 @@ createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   </StrictMode >
 );
-

@@ -33,6 +33,7 @@ export class AppFiltration1 extends Component {
   state = {
     isPlanes: false,
     isHelicopters: false,
+    bgColorSection: "white"
   };
 
   allFiltration = () => {
@@ -40,6 +41,7 @@ export class AppFiltration1 extends Component {
     this.setState({
       isPlanes: true,
       isHelicopters: true,
+      bgColorSection: "green"
     });
   };
   planeFiltration = () => {
@@ -47,6 +49,7 @@ export class AppFiltration1 extends Component {
     this.setState({
       isPlanes: true,
       isHelicopters: false,
+      bgColorSection: "yellow"
     });
   };
   helicopterFiltration = () => {
@@ -54,6 +57,7 @@ export class AppFiltration1 extends Component {
     this.setState({
       isPlanes: false,
       isHelicopters: true,
+      bgColorSection: "#9accf5"
     });
   };
 
@@ -94,12 +98,20 @@ export class AppFiltration1 extends Component {
         />
 
         {/*//! Літаки */}
-        <Section isOn={this.state.isPlanes} title="Магазин моделей літаків">
+        <Section
+          isOn={this.state.isPlanes}
+          title="Магазин моделей літаків"
+          bgColor={this.state.bgColorSection}
+        >
           <PlanesList items={planes} />
         </Section >
 
         {/*//! Вертольоти */}
-        <Section isOn={this.state.isHelicopters} title="Магазин моделей вертольотів">
+        <Section
+          isOn={this.state.isHelicopters}
+          title="Магазин моделей вертольотів"
+          bgColor={this.state.bgColorSection}
+        >
           <PlanesList items={helicopters} />
         </Section >
       </>
