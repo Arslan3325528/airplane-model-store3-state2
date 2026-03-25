@@ -54,6 +54,14 @@ export class ActualImageModal extends Component {
       title: nameFull,
       description: description,
       // share: { url: src, title: nameBrief }, //? для плагіна  Share
+      //! Приклад ретинізації зображень з можливістю автоматичного перемикання роздільної здатності
+      // srcSet: [
+      //   { src: "/image1x320.jpg", width: 320, height: 213 },
+      //   { src: "/image1x640.jpg", width: 640, height: 427 },
+      //   { src: "/image1x1200.jpg", width: 1200, height: 800 },
+      //   { src: "/image1x2048.jpg", width: 2048, height: 1365 },
+      //   { src: "/image1x3840.jpg", width: 3840, height: 2560 },
+      // ],
     }));
 
     return (
