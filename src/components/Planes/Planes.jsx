@@ -54,7 +54,7 @@ export function Planes({
       <img src={urlPromotional} alt={nameBrief} className="promotionalImage" />
       {/*//! заголовок зображень */}
       <h4 className={css.imageTitles}><CiAirportSign1 size={iconSize.lg} className={css.iconImageTitles} /> Реальна модель:</h4>
-      {/* //? Блок зображень без модальни вікон */}
+      {/* //? Блок зображень без модальних вікон */}
       {/* <div className={css.actualImageBox}>
         {urlActual.map(item =>
           <img
