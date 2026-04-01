@@ -5,23 +5,32 @@ import css from "./ColorBox.module.css";
 
 export class ColorBox extends Component {
     state = {
-        itemIdx: 0,
+        activeButtonIdx: null,
+        selectedButtonsIdx: []
     };
 
-    // setActiveIdx = index => {
-    //     this.setState({ activeOptionIdx: index });
-    // };
+    setActiveIdx = index => {
+        this.setState({
+            activeButtonIdx: index,
+            selectedButtonsIdx: [...this.state.selectedButtonsIdx, index], //todo-1
+            // selectedButtonsIdx: this.state.selectedButtonsIdx.push(index), //todo-2
+        });
+        console.log("Індекс активної кнопки:", index);
+        
+    };
 
     // makeOptionClassName = index => {
     //     return classNames('ColorPicker__option', {
-    //         'ColorPicker__option--active': index === this.state.activeOptionIdx,
+    //         'ColorPicker__option--active': index === this.state.activeButtonIdx,
     //     });
     // };
 
     render() {
-        // const { activeOptionIdx } = this.state;
+        const { activeButtonIdx, selectedButtonsIdx } = this.state;
         const { colorBoxes } = this.props;
         // const { label } = options[activeOptionIdx];
+        console.log("Активна кнопка:", activeButtonIdx);
+        console.log("Індекси обраних кнопок:", selectedButtonsIdx);
 
         return (
             <div className={css.colorBoxContainer}>
@@ -35,7 +44,9 @@ export class ColorBox extends Component {
                             className={css.colorBoxButton}
                             style={{ backgroundColor: color }}
                             onClick={() => this.setActiveIdx(index)}
-                        ></button>
+                        >
+                            {(index === activeButtonIdx) ? "On" : "Off"}
+                        </button>
                     ))}
                 </div>
             </div>
