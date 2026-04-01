@@ -12,18 +12,31 @@ export class ColorBox extends Component {
         //! Перевірка на наявність вже існуючого індексу
         if ((this.state.selectedButtonsIdx.find(item => item === index)) === undefined) {
             console.log("Такого індекса ще немає,тоді ДОДАЄМО його!✅");
+            this.setState({
+                activeButtonIdx: index,
+                selectedButtonsIdx: [...this.state.selectedButtonsIdx, index].sort((a, b) => a - b), //todo-1 ✅
+            });
+            console.log("Індекс активної кнопки:", index);
         } else {
             console.log("Такий індекс вже є,тоді ВИДАЛЯЄМО його!❌");
+            const indexElementRemoved = this.state.selectedButtonsIdx.find(item => item === index);
+            console.log("Індекс видаляемого елемента:", indexElementRemoved);
+            this.state.selectedButtonsIdx.splice(indexElementRemoved, 1).sort((a, b) => a - b);
+            this.setState({
+                selectedButtonsIdx: [...this.state.selectedButtonsIdx]
+            });
         };
 
-        this.setState({
-            activeButtonIdx: index,
-            selectedButtonsIdx: [...this.state.selectedButtonsIdx, index].sort((a, b) => a - b), //todo-1 ✅
-            // selectedButtonsIdx: this.state.selectedButtonsIdx.push(index), //todo-2 ❌
-        });
-        // this.state.selectedButtonsIdx.push(index); //todo-2-1 ✅
-        // this.state.selectedButtonsIdx.sort((a, b) => a - b), //todo-2-2 ✅
-        console.log("Індекс активної кнопки:", index);
+        //? -------------------------------------------------------------------------------------------------------
+        // this.setState({
+        //     activeButtonIdx: index,
+        //     selectedButtonsIdx: [...this.state.selectedButtonsIdx, index].sort((a, b) => a - b), //todo-1 ✅
+        //     // selectedButtonsIdx: this.state.selectedButtonsIdx.push(index), //todo-2 ❌
+        // });
+        // // this.state.selectedButtonsIdx.push(index); //todo-2-1 ✅
+        // // this.state.selectedButtonsIdx.sort((a, b) => a - b), //todo-2-2 ✅
+        // console.log("Індекс активної кнопки:", index);
+        //? -------------------------------------------------------------------------------------------------------
     };
 
     render() {
