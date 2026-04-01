@@ -21,9 +21,9 @@ export class ColorBox extends Component {
             console.log("Такий індекс вже є,тоді ВИДАЛЯЄМО його!❌");
             const indexElementRemoved = this.state.selectedButtonsIdx.find(item => item === index);
             console.log("Індекс видаляемого елемента:", indexElementRemoved);
-            this.state.selectedButtonsIdx.splice(indexElementRemoved, 1).sort((a, b) => a - b);
+            // this.state.selectedButtonsIdx.splice(indexElementRemoved, 1).sort((a, b) => a - b); //! ❌ !так працює нестабільно!
             this.setState({
-                selectedButtonsIdx: [...this.state.selectedButtonsIdx]
+                selectedButtonsIdx: this.state.selectedButtonsIdx.filter(item => item !== index)
             });
         };
 
