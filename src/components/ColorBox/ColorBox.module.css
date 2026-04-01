@@ -1,0 +1,37 @@
+.colorBoxContainer {
+    width: max-content;
+    margin: 100px auto;
+    padding: 10px;
+    outline: 1px solid black;
+}
+
+.colorBoxTitle {
+    text-align: center;
+    color: gray;
+    font-size: 2rem;
+}
+
+.colorBoxDescription {
+    text-align: center;
+    color: black;
+    font-size: 1.5rem;
+}
+
+.colorBox {
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    height: 120px;
+    cursor: pointer;
+    /* transition: transform 250ms linear; */
+    /* outline: 1px solid gray; */
+}
+
+.colorBoxButton {
+    width: 100px;
+    outline: 1px solid black;
+}
+
+.colorBoxActive {
+    transform: scale(1.2);
+}

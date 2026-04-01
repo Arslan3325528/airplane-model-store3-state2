@@ -7,18 +7,18 @@ import { theme } from '@/constants'; //! Emotion Theme
 import './index.css';
 
 //! Aбсолютний шлях + Реекспорт
-import { App } from '@/components/App';
+import {
+  App,
+  AppColorBox
+} from '@/components/App';
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter basename="/airplane-model-store3-state2">
       <ThemeProvider theme={theme}>
-        <App />
-        {/* <AppCounter />  */}
-        {/* <AppFiltration1 /> */}
-        {/* <AppFiltration2 /> */}
-        {/* <AppFiltration3 /> */}
+        {/* <App /> */}
+        <AppColorBox /> 
       </ThemeProvider>
     </BrowserRouter>
   </StrictMode >
