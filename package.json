@@ -1,12 +1,12 @@
 {
-  "name": "airplane-model-store3-state1",
-  "homepage": "https://Arslan3325528.github.io/airplane-model-store3-state1",
+  "name": "airplane-model-store3-state2",
+  "homepage": "https://Arslan3325528.github.io/airplane-model-store3-state2",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/airplane-model-store3-state1/",
+    "build": "vite build --base=/airplane-model-store3-state2/",
     "lint": "eslint .",
     "preview": "vite preview"
   },

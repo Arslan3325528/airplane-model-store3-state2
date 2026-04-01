@@ -1,61 +1,46 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
 import css from "./Filter.module.css";
 
 
 //? Підняття стану
-//! Компонент-клас
-// export class Filter extends Component {
-//   render() {
-//     return (
-//         <div className={css.filterBox}>
-//           <button
-//             className={css.buttonAllFiltration}
-//             type="button"
-//             onClick={this.props.onAll}
-//           >
-//             ВСІ
-//           </button>
-
-//           <button
-//             className={css.buttonPlaneFiltration}
-//             type="button"
-//             onClick={this.props.onPlanes}
-//           >
-//             Літаки
-//           </button>
-
-//           <button
-//             className={css.buttonHelicopterFiltration}
-//             type="button"
-//           onClick={this.props.onHelicopters}
-//           >
-//             Вертольоти
-//           </button>
-//         </div>
-//     )
-//   }
-// };
-
 //! Звичайний компонент
-export function Filter ({ onAll, onPlanes, onHelicopters }) {
+export function Filter({
+  onAll,
+  onPlanes,
+  onBiplanes,
+  onHelicopters,
+  filterButton //! Візуалізація активної кнопки
+})
+{
   return (
     <div className={css.filterBox}>
       <button
-        className={css.buttonAllFiltration}
+        // className={css.buttonAllFiltration}
+        className={filterButton === "allButton" ? `${css.buttonAllFiltration} ${css.active}` : css.buttonAllFiltration}
         type="button"
         onClick={onAll}
       >
         ВСІ
       </button>
       <button
-        className={css.buttonPlaneFiltration}
+        // className={css.buttonPlaneFiltration}
+        className={filterButton === "planeButton" ? `${css.buttonPlaneFiltration} ${css.active}` : css.buttonPlaneFiltration}
         type="button"
         onClick={onPlanes}
       >
         Літаки
       </button>
       <button
-        className={css.buttonHelicopterFiltration}
+        // className={css.buttonBiplaneFiltration}
+        className={filterButton === "biplaneButton" ? `${css.buttonBiplaneFiltration} ${css.active}` : css.buttonBiplaneFiltration}
+        type="button"
+        onClick={onBiplanes}
+      >
+        Біплани
+      </button>
+      <button
+        // className={css.buttonHelicopterFiltration}
+        className={filterButton === "helicopterButton" ? `${css.buttonHelicopterFiltration} ${css.active}` : css.buttonHelicopterFiltration}
         type="button"
         onClick={onHelicopters}
       >

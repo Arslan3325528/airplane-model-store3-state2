@@ -40,10 +40,21 @@
 .buttonPlaneFiltration {
     composes: button;
     border: 6px yellow solid;
-    outline: 6px #f59aa9 solid;
+}
+
+.buttonBiplaneFiltration {
+    composes: button;
+    border: 6px #f59aa9 solid;
 }
 
 .buttonHelicopterFiltration {
     composes: button;
     border: 6px #9accf5 solid;
+}
+
+/*//! Візуалізація активної кнопки */
+.active {
+    color: #c51900;
+    box-shadow: none;
+    outline: 1px #902a00 solid;
 }

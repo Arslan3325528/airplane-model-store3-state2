@@ -1,117 +1,82 @@
 import React, { Component } from "react";
-import css from "./App.module.css";
 
 import { Section } from '@/components/Section/Section.jsx';
 import { PlanesList } from '@/components/PlanesList/PlanesList.jsx';
 import { Filter } from '@/components/Filter/Filter.jsx';
 
-import planes from '@/json/planes.json';
-import helicopters from '@/json/helicopters.json';
-// import { planes, helicopters } from '@/json'; //! ❌ так не працює
-
-//! Збільшення/Зменьшення на 1
-import { Counter } from '@/components/Counter/Counter.jsx';
-
-
-//! Звичайний компонент
-// export function App() {
-//   return (
-//     <>
-//       {/* <Counter /> */}
-//       {/*//! Початковий стан лічильника з props */}
-//       {/* <Counter initialValue={10} /> */}
-
-//       {/*//! Літаки */}
-//       <Section isOn={true} title="Магазин моделей літаків">
-//         <PlanesList items={planes} />
-//       </Section >
-
-//       {/*//! Вертольоти */}
-//       <Section isOn={true} title="Магазин моделей вертольотів">
-//         <PlanesList items={helicopters} />
-//       </Section >
-//     </>
-//   );
-// };
+import aircrafts from '@/json/aircrafts.json';
 
 
 //! Компонент-клас
 export class App extends Component {
   state = {
-    isPlanes: true,
-    isHelicopters: true,
+    aircraftsArr: aircrafts,
+    aircraftsTitle: "Магазин моделей літальних апаратів",
+    //! Візуалізація активної кнопки
+    activeButton: "allButton"
   };
 
   allFiltration = () => {
     console.log("Клік в кнопку All");
+    console.log("allAircrafts:", aircrafts);
     this.setState({
-      isPlanes: true,
-      isHelicopters: true,
+      aircraftsArr: aircrafts,
+      aircraftsTitle: "Магазин моделей літальних апаратів",
+      //! Візуалізація активної кнопки
+      activeButton: "allButton"
     });
   };
   planeFiltration = () => {
     console.log("Клік в кнопку Planes");
+    const onlyPlanes = aircrafts.filter(aircraft => aircraft.aircraftType === "plane");
+    console.log("onlyPlanes:", onlyPlanes);
     this.setState({
-      isPlanes: true,
-      isHelicopters: false,
+      aircraftsArr: onlyPlanes,
+      aircraftsTitle: "Магазин моделей літаків",
+      //! Візуалізація активної кнопки
+      activeButton: "planeButton"
+    });
+  };
+  biplaneFiltration = () => {
+    console.log("Клік в кнопку Biplane");
+    const onlyBiplane = aircrafts.filter(aircraft => aircraft.aircraftType === "biplane");
+    console.log("onlyBiplane:", onlyBiplane);
+    this.setState({
+      aircraftsArr: onlyBiplane,
+      aircraftsTitle: "Магазин моделей біпланів",
+      //! Візуалізація активної кнопки
+      activeButton: "biplaneButton"
     });
   };
   helicopterFiltration = () => {
     console.log("Клік в кнопку Helicopters");
+    const onlyHelicopters = aircrafts.filter(aircraft => aircraft.aircraftType === "helicopter");
+    console.log("onlyHelicopters:", onlyHelicopters);
     this.setState({
-      isPlanes: false,
-      isHelicopters: true,
+      aircraftsArr: onlyHelicopters,
+      aircraftsTitle: "Магазин моделей вертольотів",
+      //! Візуалізація активної кнопки
+      activeButton: "helicopterButton"
     });
   };
 
   render() {
     return (
       <>
-        {/* <Counter /> */}
-        {/*//! Початковий стан лічильника з props */}
-        {/* <Counter initialValue={10} />  */}
-
         {/*//!  Filter */}
-        <div className={css.filterBox}>
-          <button
-            className={css.buttonAllFiltration}
-            type="button"
-            onClick={this.allFiltration}
-          >
-            ВСІ
-          </button>
-
-          <button
-            className={css.buttonPlaneFiltration}
-            type="button"
-            onClick={this.planeFiltration}
-          >
-            Літаки
-          </button>
-
-          <button
-            className={css.buttonHelicopterFiltration}
-            type="button"
-            onClick={this.helicopterFiltration}
-          >
-            Вертольоти
-          </button>
-        </div>
-
-        {/* <Filter
+        <Filter
           onAll={this.allFiltration}
           onPlanes={this.planeFiltration}
+          onBiplanes={this.biplaneFiltration}
           onHelicopters={this.helicopterFiltration}
-        /> */}
+          filterButton={this.state.activeButton} //! Візуалізація активної кнопки
+        />
 
-        {/*//! Літаки */}
-        <Section isOn={this.state.isPlanes} title="Магазин моделей літаків">
-          <PlanesList items={planes} />
-        </Section >
-
-        {/*//! Вертольоти */}
-        <Section isOn={this.state.isHelicopters} title="Магазин моделей вертольотів">
-          <PlanesList items={helicopters} />
+        {/*//! ВСІ */}
+        <Section
+          title={this.state.aircraftsTitle}
+        >
+          <PlanesList items={this.state.aircraftsArr} />
         </Section >
       </>
     )
