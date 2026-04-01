@@ -10,12 +10,23 @@ export class ColorBox extends Component {
     };
 
     setActiveIdx = index => {
+        //! Перевірка на наявність вже існуючого індексу
+        if ((this.state.selectedButtonsIdx.find(item => item === index)) === undefined) {
+            console.log("Такого індекса ще немає,тоді ДОДАЄМО його!✅");
+        } else {
+            console.log("Такий індекс вже є,тоді ВИДАЛЯЄМО його!❌");
+        };
+
         this.setState({
             activeButtonIdx: index,
             selectedButtonsIdx: [...this.state.selectedButtonsIdx, index].sort((a, b) => a - b), //todo-1 ✅
             // selectedButtonsIdx: this.state.selectedButtonsIdx.push(index), //todo-2 ❌
         });
+        // this.state.selectedButtonsIdx.push(index); //todo-2-1 ✅
+        // this.state.selectedButtonsIdx.sort((a, b) => a - b), //todo-2-2 ✅
         console.log("Індекс активної кнопки:", index);
+
+       
         
     };
 
