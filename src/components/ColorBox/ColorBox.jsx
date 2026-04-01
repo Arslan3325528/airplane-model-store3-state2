@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import classNames from 'classnames';
 import css from "./ColorBox.module.css";
 
 
@@ -25,16 +24,7 @@ export class ColorBox extends Component {
         // this.state.selectedButtonsIdx.push(index); //todo-2-1 ✅
         // this.state.selectedButtonsIdx.sort((a, b) => a - b), //todo-2-2 ✅
         console.log("Індекс активної кнопки:", index);
-
-       
-        
     };
-
-    // makeOptionClassName = index => {
-    //     return classNames('ColorPicker__option', {
-    //         'ColorPicker__option--active': index === this.state.activeButtonIdx,
-    //     });
-    // };
 
     render() {
         const { activeButtonIdx, selectedButtonsIdx } = this.state;
@@ -46,12 +36,11 @@ export class ColorBox extends Component {
         return (
             <div className={css.colorBoxContainer}>
                 <h2 className={css.colorBoxTitle}>Color Picker</h2>
-                <p className={css.colorBoxDescription}>Вибраний колір: {"вибраний колір"}</p>
+                {/* <p className={css.colorBoxDescription}>Вибраний колір: {"вибраний колір"}</p> */}
                 <div className={css.colorBox}>
                     {colorBoxes.map(({ label, color }, index) => (
                         <button
                             key={label}
-                            // className={this.makeOptionClassName(index)}
                             className={css.colorBoxButton}
                             style={{ backgroundColor: color }}
                             onClick={() => this.setActiveIdx(index)}

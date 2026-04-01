@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import { ColorBox } from '@/components/ColorBox/ColorBox.jsx';
 
-import aircrafts from '@/json/aircrafts.json';
 
 const colorBoxOptions = [
   { label: 'red', color: '#ff0000' },
@@ -16,26 +15,9 @@ const colorBoxOptions = [
 
 //! Компонент-клас
 export class AppColorBox extends Component {
-  state = {
-
-  };
-
-  allFiltration = () => {
-    // console.log("Клік в кнопку All");
-    // console.log("allAircrafts:", aircrafts);
-    // this.setState({
-    //   aircraftsArr: aircrafts,
-    //   aircraftsTitle: "Магазин моделей літальних апаратів",
-    // });
-  };
-
-
   render() {
     return (
-      <ColorBox
-        colorBoxes={colorBoxOptions}
-        
-        />
+      <ColorBox colorBoxes={colorBoxOptions}/>
     )
   }
 };
