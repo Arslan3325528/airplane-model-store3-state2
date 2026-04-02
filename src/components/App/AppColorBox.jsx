@@ -9,7 +9,7 @@ const colorBoxOptions = [
   { label: 'yellow', color: '#ffff00' },
   { label: 'green', color: '#008000' },
   { label: 'lightblue', color: '#add8e6' },
-  { label: 'blue', color: '#0000ff' },
+  { label: 'blue', color: '#3131ff' },
   { label: 'violet', color: '#ee82ee' },
 ];
 
