@@ -4,9 +4,9 @@ import css from "./ColorBox.module.css";
 
 export class ColorBox extends Component {
     state = {
-        activeButtonIdx: null,
-        selectedButtonsIdx: [],
-        selectedColors: []
+        activeButtonIdx: null, //! індекс обраного елемента
+        selectedButtonsIdx: [], //! масив індексів обраних елементів
+        selectedColors: [] //! масив обраних елементів згідно масиву індексів
     };
 
     //! Формуємо масив обраних елементів(кольорів)
