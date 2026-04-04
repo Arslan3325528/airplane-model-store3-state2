@@ -4,77 +4,36 @@ import css from "./ColorBox.module.css";
 
 export class ColorBox extends Component {
     state = {
-        activeButtonIdx: null, //! індекс обраного елемента
-        selectedButtonsIdx: [], //! масив індексів обраних елементів
-        selectedColors: [] //! масив обраних елементів згідно масиву індексів
-    };
-
-    //! Формуємо масив обраних елементів(кольорів)
-    // creatingArraySelectedElements = (arrId, arr) => {
-    //     return arrId.flatMap(item => arr.filter((el, idx) => idx === item));
-    // };
-    // updateSelectedColorElements = () => {
-    //     this.setState(prevState => ({
-    //         selectedColors: prevState.selectedButtonsIdx.flatMap(item =>
-    //             this.props.colorBoxes.filter((el, idx) => idx === item)
-    //         )
-    //     }));
-    // };
-    updateSelectedColorElements = (arr) => {
-        this.setState(prevState => ({
-            selectedColors: prevState.selectedButtonsIdx.flatMap(item =>
-                arr.filter((el, idx) => idx === item)
-            )
-        }));
+        activeButtonIdx: null, 
+        selectedButtonsIdx: [], 
+        selectedColors: [] 
     };
 
     setActiveIdx = index => {
-        //! Перевірка на наявність вже існуючого індексу
         if ((this.state.selectedButtonsIdx.find(item => item === index)) === undefined) {
-            console.log("Такого індекса ще немає,тоді ДОДАЄМО його!✅");
             this.setState({
                 activeButtonIdx: index,
-                selectedButtonsIdx: [...this.state.selectedButtonsIdx, index].sort((a, b) => a - b), //todo-1 ✅
+                selectedButtonsIdx: [...this.state.selectedButtonsIdx, index].sort((a, b) => a - b),
             });
             console.log("Індекс активної кнопки:", index);
             
         } else {
-            console.log("Такий індекс вже є,тоді ВИДАЛЯЄМО його!❌");
             const indexElementRemoved = this.state.selectedButtonsIdx.find(item => item === index);
             console.log("Індекс видаляемого елемента:", indexElementRemoved);
-            // this.state.selectedButtonsIdx.splice(indexElementRemoved, 1).sort((a, b) => a - b); //! ❌ !так працює нестабільно!
             this.setState({
                 selectedButtonsIdx: this.state.selectedButtonsIdx.filter(item => item !== index),
             });
         };
-        //! Формуємо масив обраних елементів(кольорів)
-        // this.setState(prevState => {
-        //     return {
-        //         selectedColors: prevState.selectedButtonsIdx.flatMap(item => this.props.colorBoxes.filter((el, idx) => idx === item))
-        //     };
-        // });
-        this.updateSelectedColorElements(this.props.colorBoxes);
-
-
-        //? -------------------------------------------------------------------------------------------------------
-        // this.setState({
-        //     activeButtonIdx: index,
-        //     selectedButtonsIdx: [...this.state.selectedButtonsIdx, index].sort((a, b) => a - b), //todo-1 ✅
-        //     // selectedButtonsIdx: this.state.selectedButtonsIdx.push(index), //todo-2 ❌
-        // });
-        // // this.state.selectedButtonsIdx.push(index); //todo-2-1 ✅
-        // // this.state.selectedButtonsIdx.sort((a, b) => a - b), //todo-2-2 ✅
-        // console.log("Індекс активної кнопки:", index);
-        //? -------------------------------------------------------------------------------------------------------
+        this.setState(prevState => {
+            return {
+                selectedColors: prevState.selectedButtonsIdx.flatMap(item => this.props.colorBoxes.filter((el, idx) => idx === item))
+            };
+        });
     };
 
     render() {
         const { activeButtonIdx, selectedButtonsIdx, selectedColors } = this.state;
         const { colorBoxes } = this.props;
-        // const { label } = options[activeOptionIdx];
-        console.log("🔘Активна кнопка:", activeButtonIdx);
-        console.log("ℹ️Індекси обраних кнопок:", selectedButtonsIdx);
-        console.log("Ⓜ️Масив обраних елементів(кольорів):", selectedColors);
 
         return (
             <>
@@ -99,7 +58,6 @@ export class ColorBox extends Component {
                                 style={{ backgroundColor: color }}
                                 onClick={() => this.setActiveIdx(index)}
                             >
-                                {/* {(index === activeButtonIdx) ? "On" : "Off"} */}
                                 {(selectedButtonsIdx.some(value => value === index)) ? "On" : "Off"}
                             </button>
                         ))}
