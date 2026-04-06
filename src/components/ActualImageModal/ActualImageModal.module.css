@@ -1,16 +1,12 @@
 .actualImageBox {
-    
     display: flex;
+    height: max-content; /* ! */
     gap: 10px;
     flex-wrap: wrap;
     padding: 8px;
     border-radius: 8px;
     background-color: gray;
 }
-/* ! Якщо немає в наявності */
-/* .outOfStock { 
-    height: calc((max-content) * 2);
-} */
 
 .actualImage {
     max-width: calc((100% - 10px) / 2);
@@ -19,9 +15,19 @@
     transition: transform 500ms; /*! + */
     font-size: 1.1em;
 }
+/* ! Якщо немає в наявності */
+.outOfStock { 
+    max-width: 100%;
+    cursor: auto;
+}
 
 /*! + */
 .actualImage:hover {
     transform: scale(1.03);
     outline: 3px solid #ff9111;
+}
+/* ! Якщо немає в наявності */
+.actualImage.outOfStock:hover {
+    transform: none;
+    outline: none;
 }

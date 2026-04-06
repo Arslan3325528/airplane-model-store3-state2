@@ -79,7 +79,7 @@ export function Planes({
         type="button"
         // className={css.planeButton}
         //! Якщо немає в наявності
-        className={(urlActual[0] === template) ? `${css.planeButton} ${css.buttonDisabled}`: css.planeButton }
+        className={(urlActual[0] === template) ? `${css.planeButton} ${css.buttonDisabled}`: css.planeButton}
         disabled={urlActual[0] === template} //! Якщо немає в наявності
       >
         Додати до кошику
