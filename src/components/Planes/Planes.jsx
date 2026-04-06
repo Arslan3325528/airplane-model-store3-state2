@@ -23,7 +23,7 @@ export function Planes({
   wikipediaPage,
   urlMain = defaultImage, //! Дефолтне зображення
   urlPromotional,
-  urlActual = [template, template, template, template],
+  urlActual = [template],
   urlActualFull = [],
   nameBrief,
   nameFull,

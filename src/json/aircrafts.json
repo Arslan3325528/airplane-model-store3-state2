@@ -251,7 +251,7 @@
         "/airplane-model-store3-state2/images/planes-actual/su-25rus-comp-1.jpg",
         "/airplane-model-store3-state2/images/planes-actual/su-25ukr-comp-2.jpg",
         "/airplane-model-store3-state2/images/planes-actual/su-25ukr-comp-3.jpg",
-        "/airplane-model-store3-state2/images/planes-actual/SU-25rus+SU-25ukr_comp-4.jpg"
+        "/airplane-model-store3-state2/images/planes-actual/su-25rus+su-25ukr_comp-4.jpg"
       ]
     },
     "name": {
@@ -525,7 +525,7 @@
       "wikipedia": "https://ru.wikipedia.org/wiki/North_American_P-51_Mustang",
       "main": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/P-51-361.jpg/3840px-P-51-361.jpg",
       "promotional": "https://lh3.googleusercontent.com/pw/AP1GczNP9EQmp6KBSwc0yPvQm6OS50HnrO0P1PfgTAzZaKE9oYiOMKkGqrMd-xueWJyZhHx6lK-3zp-HLJ3ZgatmpWXRVr1MvkoLxl2syrpHSgW7qKJJzdBkp0sJY5E7_I8tukLJxMm0sZvjF0K-N_KaV_ef=w1276-h1293-s-no-gm?authuser=0",
-      "actual": [
+      "_actual": [
         "/airplane-model-store3-state2/images/planes-actual/p-51-comp-1.jpg",
         "/airplane-model-store3-state2/images/planes-actual/p-51-comp-2.jpg",
         "/airplane-model-store3-state2/images/planes-actual/p-51-comp-3.jpg",

@@ -1,4 +1,5 @@
 .actualImageBox {
+    
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
@@ -6,6 +7,10 @@
     border-radius: 8px;
     background-color: gray;
 }
+/* ! Якщо немає в наявності */
+/* .outOfStock { 
+    height: calc((max-content) * 2);
+} */
 
 .actualImage {
     max-width: calc((100% - 10px) / 2);

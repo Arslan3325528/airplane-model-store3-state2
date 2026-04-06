@@ -65,8 +65,15 @@ export class ActualImageModal extends Component {
       // ],
     }));
 
+    // console.log("images[0]:", images[0]);
     return (
-      <div className={css.actualImageBox}>
+      
+      <div
+        className={css.actualImageBox}
+        //! Якщо немає в наявності
+        // className={(images[0] === templateImage) ? `${css.actualImageBox} ${css.outOfStock}` : css.actualImageBox }
+      >
+
         {/*//! Галерея (блок зображень)*/}
         {images.map((img, i) => (
           <img
