@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import { ActualImageModal } from '@/components/ActualImageModal/ActualImageModal.jsx'; //? Модальні вікна для блока зображень з бібліотекою Yet Another React Lightbox
+import defaultImage from "@/components/Planes/default.jpg"; 
+import template from "@/components/Planes/template-out-of-stock.jpg";
 import css from "./Planes.module.css"; 
-import defaultImage from "@/components/default.jpg"; 
 
 //! Бібліотека react-icons
 import { AiOutlineFlag, AiOutlineInfoCircle, AiOutlineClockCircle, AiOutlineDollarCircle } from "react-icons/ai";
@@ -22,7 +23,7 @@ export function Planes({
   wikipediaPage,
   urlMain = defaultImage, //! Дефолтне зображення
   urlPromotional,
-  urlActual,
+  urlActual = [template, template, template, template],
   urlActualFull = [],
   nameBrief,
   nameFull,
@@ -72,10 +73,14 @@ export function Planes({
         nameBrief={nameBrief}
         nameFull={nameFull}
         description={description}
+        templateImage={template}
       />
       <button
         type="button"
-        className={css.planeButton}
+        // className={css.planeButton}
+        //! Якщо немає в наявності
+        className={(urlActual[0] === template) ? `${css.planeButton} ${css.buttonDisabled}`: css.planeButton }
+        disabled={urlActual[0] === template} //! Якщо немає в наявності
       >
         Додати до кошику
       </button>

@@ -517,5 +517,36 @@
       "start": "1934-01-01T00:00:00",
       "end": "1936-01-01T00:00:00"
     }
+  },
+  {
+    "id": "id-17",
+    "aircraftType": "plane",
+    "url": {
+      "wikipedia": "https://ru.wikipedia.org/wiki/North_American_P-51_Mustang",
+      "main": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/P-51-361.jpg/3840px-P-51-361.jpg",
+      "promotional": "https://lh3.googleusercontent.com/pw/AP1GczNP9EQmp6KBSwc0yPvQm6OS50HnrO0P1PfgTAzZaKE9oYiOMKkGqrMd-xueWJyZhHx6lK-3zp-HLJ3ZgatmpWXRVr1MvkoLxl2syrpHSgW7qKJJzdBkp0sJY5E7_I8tukLJxMm0sZvjF0K-N_KaV_ef=w1276-h1293-s-no-gm?authuser=0",
+      "actual": [
+        "/airplane-model-store3-state2/images/planes-actual/p-51-comp-1.jpg",
+        "/airplane-model-store3-state2/images/planes-actual/p-51-comp-2.jpg",
+        "/airplane-model-store3-state2/images/planes-actual/p-51-comp-3.jpg",
+        "/airplane-model-store3-state2/images/planes-actual/p-51-comp-4.jpg"
+      ]
+    },
+    "name": {
+      "brief": "P-51",
+      "full": "P-51 Mustang",
+      "nickname": "Мустанг («Mustang»)"
+    },
+    "info": {
+      "year": 1940,
+      "country": "США",
+      "type": "Одномісний винищувач далекого радіусу дії",
+      "price": "$50000 ($2500000 — $4000000)",
+      "description": "Був одним із найефективніших та універсальних літаків Другої світової війни. Використовувався як винищувач супроводу далекого радіусу дії. Виконував завдання винищувача-бомбардувальника, пікіруючого бомбардувальника, тактичної розвідки. Мав відмінну швидкість і маневреність на великих висотах."
+    },
+    "manufacturing": {
+      "start": "1941-01-01T00:00:00",
+      "end": "1951-01-01T00:00:00"
+    }
   }
 ]

@@ -97,3 +97,17 @@
     color: #d9d902;
     background-color: #902a00;
 }
+
+/*! Якщо немає в наявності */
+.buttonDisabled {
+    color: #ffffff;
+    cursor: not-allowed;
+    background-color: grey;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+.planeButton.buttonDisabled:hover {
+    color: #ffffff;
+    background-color: grey;
+}
