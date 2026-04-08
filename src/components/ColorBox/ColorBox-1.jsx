@@ -6,28 +6,10 @@ export class ColorBox extends Component {
     state = {
         activeButtonIdx: null, //! індекс обраного елемента
         selectedButtonsIdx: [], //! масив індексів обраних елементів
-        //! 1.Ініціалізація state з localStorage
-        // selectedButtonsIdx: JSON.parse(localStorage.getItem("selectedIdx")) || [], //! масив індексів обраних елементів
         selectedColors: [] //! масив обраних елементів згідно масиву індексів
     };
 
-    //! 2. Створення запису під час першого запуску в localStorage
-    // componentDidMount() {
-    //     const saved = localStorage.getItem("selectedIdx");
-    //     if (!saved) {
-    //         localStorage.setItem("selectedIdx", JSON.stringify([]));
-    //     }
-    //     this.updateSelectedColorElements();
-    // }
-
     //! Формуємо масив обраних елементів(кольорів)
-    // updateSelectedColorElements = () => {
-    //     this.setState(prevState => ({
-    //         selectedColors: prevState.selectedButtonsIdx.flatMap(item =>
-    //             this.props.colorBoxes.filter((el, idx) => idx === item)
-    //         )
-    //     }));
-    // };
     updateSelectedColorElements = (arr) => {
         this.setState(prevState => ({
             selectedColors: prevState.selectedButtonsIdx.flatMap(item =>
@@ -76,27 +58,16 @@ export class ColorBox extends Component {
         //? -------------------------------------------------------------------------------------------------------
     };
 
-    //todo-2
-    // setActiveIdx = index => {
-    //     this.setState(prevState => {
-    //         const exists = prevState.selectedButtonsIdx.includes(index);
-
-    //         return {
-    //             activeButtonIdx: index,
-    //             selectedButtonsIdx: exists
-    //                 ? prevState.selectedButtonsIdx.filter(item => item !== index)
-    //                 : [...prevState.selectedButtonsIdx, index].sort((a, b) => a - b)
-    //         };
-    //     });
-    // };
-
     render() {
+        const { colorBoxes } = this.props; //! масив об'єктів всіх елементів(кольорів)
         const { activeButtonIdx, selectedButtonsIdx, selectedColors } = this.state;
-        const { colorBoxes } = this.props;
-        // const { label } = options[activeOptionIdx];
+        const NumberOfColors = selectedButtonsIdx.length; //! Кількість обраних кольорів
+
         console.log("🔘Активна кнопка:", activeButtonIdx);
         console.log("ℹ️Індекси обраних кнопок:", selectedButtonsIdx);
         console.log("Ⓜ️Масив обраних елементів(кольорів):", selectedColors);
+        console.log("🆔Кількість обраних кольорів:", NumberOfColors);
+        console.log("----------------------------------------------");
 
         return (
             <>
@@ -104,14 +75,20 @@ export class ColorBox extends Component {
                 <div className={css.colorBoxContainer}>
                     <h2 className={css.colorBoxTitle}>Вибір кольорів</h2>
                     <p className={css.colorBoxDescription}>
-                        Останній доданий колір:&nbsp;&nbsp;
+                        Останній <u>доданий</u> колір:&nbsp;&nbsp;
                         <span
                             className={css.colorBoxSelectedColor}
-                            style={{ backgroundColor: activeButtonIdx !== null ? colorBoxes[activeButtonIdx].color : "transparent" }}
+                            style={{
+                                backgroundColor:
+                                    activeButtonIdx !== null
+                                        ? colorBoxes[activeButtonIdx].color
+                                        : "transparent"
+                            }}
                         >
-                            {activeButtonIdx !== null ? colorBoxes[activeButtonIdx].label : ""}
+                            {activeButtonIdx !== null
+                                ? colorBoxes[activeButtonIdx].label
+                                : ""}
                         </span>
-
                     </p>
                     <div className={css.colorBox}>
                         {colorBoxes.map(({ label, color }, index) => (
@@ -127,9 +104,16 @@ export class ColorBox extends Component {
                         ))}
                     </div>
                 </div>
+
                 {/*//! Блок обраних кольорів */}
                 <div className={css.selectedColorsContainer}>
                     <h2 className={css.colorBoxTitle}>Обрані кольори:</h2>
+                    <p className={css.colorBoxDescription}>
+                        Кількість обраних кольорів:
+                        <span className={css.colorBoxSelectedColor}>
+                            {NumberOfColors}
+                        </span>
+                    </p>
                     <div className={css.selectedColorsBox}>
                         {selectedColors.map(({ label, color }) => (
                             <div

@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
 import css from "./ColorBox.module.css";
 
+
 export class ColorBox extends Component {
     state = {
         activeButtonIdx: null,
-        selectedButtonsIdx: JSON.parse(localStorage.getItem("selectedIdx")) || []
+        // selectedButtonsIdx: [], //! масив індексів обраних елементів
+        //! 1.localStorage - Ініціалізація state з localStorage
+        selectedButtonsIdx: JSON.parse(localStorage.getItem("selectedIdx")) || [], //! масив індексів обраних елементів
     };
 
+    //! 2.localStorage - Створення запису в localStorage під час першого запуску якщо його немає
     componentDidMount() {
         const saved = localStorage.getItem("selectedIdx");
-
         if (!saved) {
             localStorage.setItem("selectedIdx", JSON.stringify([]));
         }
-    }
+    };
 
+    //! 3.localStorage - Оновлення(синхронізація) localStorage при кожній зміні selectedButtonsIdx
     componentDidUpdate(prevProps, prevState) {
         if (prevState.selectedButtonsIdx !== this.state.selectedButtonsIdx) {
             localStorage.setItem(
@@ -22,12 +26,17 @@ export class ColorBox extends Component {
                 JSON.stringify(this.state.selectedButtonsIdx)
             );
         }
-    }
+    };
 
     setActiveIdx = index => {
         this.setState(prevState => {
+            //! Перевіряє наявність елемента зі значенням <index> у масиві індексів обраних елементів [selectedButtonsIdx]
             const exists = prevState.selectedButtonsIdx.includes(index);
-
+            if (exists) {
+                console.log("Такий індекс вже є,тоді ВИДАЛЯЄМО його!❌");
+            } else {
+                console.log("Такого індекса ще немає,тоді ДОДАЄМО його!✅");
+            }
             return {
                 activeButtonIdx: index,
                 selectedButtonsIdx: exists
@@ -38,20 +47,25 @@ export class ColorBox extends Component {
     };
 
     render() {
+        const { colorBoxes } = this.props; //! масив об'єктів всіх елементів(кольорів)
         const { activeButtonIdx, selectedButtonsIdx } = this.state;
-        const { colorBoxes } = this.props;
-
-        // вычисляем, а не храним в state
+        //! Формуємо масив обраних елементів(кольорів) не зберігаючи його в state
         const selectedColors = selectedButtonsIdx.map(idx => colorBoxes[idx]);
+        const NumberOfColors = selectedButtonsIdx.length; //! Кількість обраних кольорів
+
+        console.log("🔘Активна кнопка:", activeButtonIdx);
+        console.log("ℹ️Індекси обраних кнопок:", selectedButtonsIdx);
+        console.log("Ⓜ️Масив обраних елементів(кольорів):", selectedColors);
+        console.log("🆔Кількість обраних кольорів:", NumberOfColors);
+        console.log("----------------------------------------------");
 
         return (
             <>
-                {/* Блок выбора цветов */}
+                {/*//! Блок вибору кольорів */}
                 <div className={css.colorBoxContainer}>
                     <h2 className={css.colorBoxTitle}>Вибір кольорів</h2>
-
                     <p className={css.colorBoxDescription}>
-                        Останній доданий колір:&nbsp;&nbsp;
+                        Останній <u>обраний</u> колір:&nbsp;&nbsp;
                         <span
                             className={css.colorBoxSelectedColor}
                             style={{
@@ -66,7 +80,6 @@ export class ColorBox extends Component {
                                 : ""}
                         </span>
                     </p>
-
                     <div className={css.colorBox}>
                         {colorBoxes.map(({ label, color }, index) => (
                             <button
@@ -75,16 +88,21 @@ export class ColorBox extends Component {
                                 style={{ backgroundColor: color }}
                                 onClick={() => this.setActiveIdx(index)}
                             >
-                                {selectedButtonsIdx.includes(index) ? "On" : "Off"}
+                                {selectedButtonsIdx.includes(index) ? "✅On" : "🆓Off"}
                             </button>
                         ))}
                     </div>
                 </div>
 
-                {/* Блок выбранных цветов */}
+                {/*//! Блок обраних кольорів */}
                 <div className={css.selectedColorsContainer}>
-                    <h2 className={css.colorBoxTitle}>Обрані кольори:</h2>
-
+                    <h2 className={css.colorBoxTitle}>Обрані кольори з localStorage:</h2>
+                    <p className={css.colorBoxDescription}>
+                        Кількість обраних кольорів:
+                        <span className={css.colorBoxSelectedColor}>
+                            {NumberOfColors}
+                        </span>
+                    </p>                   
                     <div className={css.selectedColorsBox}>
                         {selectedColors.map(({ label, color }) => (
                             <div
@@ -100,4 +118,4 @@ export class ColorBox extends Component {
             </>
         );
     }
-}
+};
