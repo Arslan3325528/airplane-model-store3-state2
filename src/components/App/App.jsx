@@ -65,10 +65,10 @@ export class App extends Component {
 
   cartFiltration = () => {
     console.log("Клік в кнопку Кошик");
-    // const onlyCart = aircrafts.filter(aircraft => aircraft.aircraftType === "helicopter");
-    // console.log("onlyCart:", onlyCart);
+    //! Формуємо масив обраних моделей [selectedModels] не зберігаючи його в state:
+    const selectedModels = this.state.indicesSelectedModels.flatMap(id => aircrafts.filter((el) => id === el.id));
     this.setState({
-      // aircraftsArr: onlyCart,
+      aircraftsArr: selectedModels,
       aircraftsTitle: "Мої обрані моделі",
       //! Візуалізація активної кнопки
       activeButton: "cartButton"
