@@ -30,13 +30,13 @@ export class ColorBox extends Component {
 
     setActiveIdx = index => {
         this.setState(prevState => {
-            //! Перевіряє наявність елемента зі значенням <index> у масиві індексів обраних елементів [selectedButtonsIdx]
+            //! Перевіряємо наявність елемента зі значенням <index> у масиві індексів обраних елементів [selectedButtonsIdx]
             const exists = prevState.selectedButtonsIdx.includes(index);
             if (exists) {
                 console.log("Такий індекс вже є,тоді ВИДАЛЯЄМО його!❌");
             } else {
                 console.log("Такого індекса ще немає,тоді ДОДАЄМО його!✅");
-            }
+            };
             return {
                 // activeButtonIdx: index,
                 selectedButtonsIdx: exists
@@ -50,14 +50,16 @@ export class ColorBox extends Component {
         const { colorBoxes } = this.props; //! масив об'єктів всіх елементів(кольорів)
         // const { activeButtonIdx, selectedButtonsIdx } = this.state;
         const { selectedButtonsIdx } = this.state;
-        //! Формуємо масив обраних елементів(кольорів) не зберігаючи його в state
-        const selectedColors = selectedButtonsIdx.map(idx => colorBoxes[idx]);
-        const NumberOfColors = selectedButtonsIdx.length; //! Кількість обраних кольорів
 
-        // console.log("🔘Активна кнопка:", activeButtonIdx);
+        //! Формуємо масив обраних елементів(кольорів) не зберігаючи його в state:
+        const selectedColors = selectedButtonsIdx.map(idx => colorBoxes[idx]);
+        //! Рахуємо кількість обраних кольорів:
+        const NumberOfColors = selectedButtonsIdx.length; 
+
+        // console.log("🔘🆔Активна кнопка:", activeButtonIdx);
         console.log("ℹ️Індекси обраних кнопок:", selectedButtonsIdx);
         console.log("Ⓜ️Масив обраних елементів(кольорів):", selectedColors);
-        console.log("🆔Кількість обраних кольорів:", NumberOfColors);
+        console.log("🔢Кількість обраних кольорів:", NumberOfColors);
         console.log("----------------------------------------------");
 
         return (

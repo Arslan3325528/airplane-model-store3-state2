@@ -12,8 +12,8 @@ export class App extends Component {
   state = {
     aircraftsArr: aircrafts,
     aircraftsTitle: "Магазин моделей літальних апаратів",
-    //! Візуалізація активної кнопки
-    activeButton: "allButton"
+    activeButton: "allButton", //! візуалізація активної кнопки
+    indicesSelectedModels: [] //! масив індексів обраних моделей
   };
 
   allFiltration = () => {
@@ -75,11 +75,42 @@ export class App extends Component {
     });
   };
 
-  getActiveId = (id) => {
-    console.log("ID:", id);
+  getActiveId = id => {
+    console.log('🆔Індекс обраної моделі ("id"):', id); //!
+    this.setState(prevState => {
+      //! Перевіряємо наявність елемента зі значенням <id> у масиві індексів обраних моделей [indicesSelectedModels]
+      const exists = prevState.indicesSelectedModels.includes(id);
+      if (exists) {
+        console.log("Такий індекс моделі вже є,тоді ВИДАЛЯЄМО його!❌");
+      } else {
+        console.log("Такого індекса моделі ще немає,тоді ДОДАЄМО його!✅");
+      };
+      return {
+        indicesSelectedModels: exists
+          ? prevState.indicesSelectedModels.filter(item => item !== id)
+          : [...prevState.indicesSelectedModels, id].sort((a, b) => a - b)
+      };
+    });
   }
 
   render() {
+    const {
+      aircraftsArr,
+      aircraftsTitle,
+      activeButton, //! візуалізація активної кнопки
+      indicesSelectedModels, //! масив індексів обраних моделей
+    } = this.state; 
+
+    //! Формуємо масив обраних моделей [selectedModels] не зберігаючи його в state:
+    const selectedModels = indicesSelectedModels.flatMap(id => aircrafts.filter((el) => id === el.id));
+    //! Рахуємо кількість обраних моделей
+    const NumberOfModels = indicesSelectedModels.length; 
+
+    console.log("ℹ️Mасив індексів обраних моделей :", indicesSelectedModels);
+    console.log("Ⓜ️Масив обраних моделей:", selectedModels);
+    console.log("🔢Кількість обраних обраних:", NumberOfModels);
+    console.log("----------------------------------------------");
+
     return (
       <>
         {/*//!  Filter */}
@@ -94,10 +125,10 @@ export class App extends Component {
 
         {/*//! ВСІ */}
         <Section
-          title={this.state.aircraftsTitle}
+          title={aircraftsTitle}
         >
           <PlanesList
-            items={this.state.aircraftsArr}
+            items={aircraftsArr}
             onActiveId={this.getActiveId}
           />
         </Section >

@@ -61,12 +61,14 @@ export class ColorBox extends Component {
     render() {
         const { colorBoxes } = this.props; //! масив об'єктів всіх елементів(кольорів)
         const { activeButtonIdx, selectedButtonsIdx, selectedColors } = this.state;
-        const NumberOfColors = selectedButtonsIdx.length; //! Кількість обраних кольорів
 
-        console.log("🔘Активна кнопка:", activeButtonIdx);
+        //! Рахуємо кількість обраних кольорів:
+        const NumberOfColors = selectedButtonsIdx.length;
+
+        console.log("🔘🆔Активна кнопка:", activeButtonIdx);
         console.log("ℹ️Індекси обраних кнопок:", selectedButtonsIdx);
         console.log("Ⓜ️Масив обраних елементів(кольорів):", selectedColors);
-        console.log("🆔Кількість обраних кольорів:", NumberOfColors);
+        console.log("🔢Кількість обраних кольорів:", NumberOfColors);
         console.log("----------------------------------------------");
 
         return (
