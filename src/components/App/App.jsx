@@ -95,7 +95,8 @@ export class App extends Component {
       return {
         indicesSelectedModels: exists
           ? prevState.indicesSelectedModels.filter(item => item !== id)
-          : [...prevState.indicesSelectedModels, id].sort((a, b) => a - b),
+          // : [...prevState.indicesSelectedModels, id] //! без сортування
+          : [...prevState.indicesSelectedModels, id].sort((a, b) => a - b) //! з сортуванням
       };
     });
   };
