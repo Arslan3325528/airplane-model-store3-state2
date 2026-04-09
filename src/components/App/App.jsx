@@ -148,6 +148,7 @@ export class App extends Component {
             // items={aircraftsArr}
             //! використання логіки тригеру: "якщо активна кнопка «Кошик»" 
             items={isCartButton ? selectedModels : aircraftsArr} 
+            indicesArray={indicesSelectedModels}
             onActiveId={this.getActiveId}
           />
         </Section >

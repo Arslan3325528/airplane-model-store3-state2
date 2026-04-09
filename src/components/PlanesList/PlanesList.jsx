@@ -5,7 +5,7 @@ import { Planes } from '@/components/Planes/Planes.jsx'; //? Модальні в
 import { getBgColorCSSModule } from '@/utils'; 
 
 
-export function PlanesList({ items, onActiveId }) {
+export function PlanesList({ items, indicesArray, onActiveId }) {
     return (
         <>
             {items.length
@@ -34,6 +34,7 @@ export function PlanesList({ items, onActiveId }) {
                                 manufacturingStart={item.manufacturing.start}
                                 manufacturingEnd={item.manufacturing.end}
                                 onActiveId={onActiveId}
+                                indicesArray={indicesArray}
                             />
                         </li>
                     )}

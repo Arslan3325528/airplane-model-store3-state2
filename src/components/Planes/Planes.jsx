@@ -36,6 +36,7 @@ export function Planes({
   modelActualFullImages = [],
   manufacturingStart,
   manufacturingEnd,
+  indicesArray,
   onActiveId
 })
 {
@@ -80,13 +81,22 @@ export function Planes({
       <button
         type="button"
         // className={css.planeButton}
-        //! Якщо немає в наявності
-        className={(modelActualImages[0] === template) ? `${css.planeButton} ${css.buttonDisabled}`: css.planeButton}
-        disabled={modelActualImages[0] === template} //! Якщо немає в наявності
+        //! Якщо немає в наявності або доданий в кошик
+        className={
+          (modelActualImages[0] === template)
+            ? `${css.planeButton} ${css.buttonDisabled}` //! якщо немає в наявності
+            // : css.planeButton
+            : (indicesArray.includes(aircraftId)) ? `${css.planeButton} ${css.inCart}`: css.planeButton //! якщо доданий в кошик
+        }
+
+        disabled={modelActualImages[0] === template} //! блокування кнопки, якщо немає в наявності
+
         // onClick={() => console.log("ID:", aircraftId)}
         onClick={() => onActiveId(aircraftId)}
       >
-        Додати до кошику
+        {/* Додати до кошику */}
+        {/*//! Зміна стилю кнопки, якщо товар доданий до кошику */}
+        {indicesArray.includes(aircraftId) ? "❌ Видалити із кошика" : "✅ Додати до кошику"}
       </button>
     </>
   );

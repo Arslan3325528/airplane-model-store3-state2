@@ -109,3 +109,12 @@
     color: #c1c1c1;
     background-color: #808080;
 }
+
+/*! Якщо доданий в кошик */
+.inCart {
+    background-color: #902a00;
+}
+.planeButton.inCart:hover {
+    color: #d9d902;
+    background-color: #008080;
+}
