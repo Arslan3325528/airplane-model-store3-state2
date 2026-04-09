@@ -36,3 +36,12 @@
     composes: planesItem;
     background-color: #d6f1ff;
 }
+
+.invitation {
+    margin-top: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    text-align: center;
+    color: #ff5119;
+}

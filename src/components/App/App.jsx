@@ -36,7 +36,7 @@ export class App extends Component {
     this.setState({
       aircraftsArr: onlyPlanes,
       aircraftsTitle: "Магазин моделей літаків",
-      activeButton: "allButton", //! візуалізація активної кнопки
+      activeButton: "planeButton", //! візуалізація активної кнопки
       isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»" 
     });
   };
@@ -48,7 +48,7 @@ export class App extends Component {
     this.setState({
       aircraftsArr: onlyBiplane,
       aircraftsTitle: "Магазин моделей біпланів",
-      activeButton: "allButton", //! візуалізація активної кнопки
+      activeButton: "biplaneButton", //! візуалізація активної кнопки
       isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»" 
     });
   };
@@ -60,7 +60,7 @@ export class App extends Component {
     this.setState({
       aircraftsArr: onlyHelicopters,
       aircraftsTitle: "Магазин моделей вертольотів",
-      activeButton: "allButton", //! візуалізація активної кнопки
+      activeButton: "helicopterButton", //! візуалізація активної кнопки
       isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»" 
     });
   };
@@ -77,7 +77,7 @@ export class App extends Component {
       // aircraftsArr: selectedModels,
       // aircraftsArr: this.updateSelectedModels(), //! вже не треба, якщо є isCartButton
       aircraftsTitle: "Мої обрані моделі",
-      activeButton: "allButton", //! візуалізація активної кнопки
+      activeButton: "cartButton", //! візуалізація активної кнопки
       isCartButton: true, //! тригер: "якщо активна кнопка «Кошик»" 
     });
   };
@@ -138,7 +138,10 @@ export class App extends Component {
 
         {/*//! ВСІ */}
         <Section
-          title={aircraftsTitle}
+          // title={aircraftsTitle}
+          //! використання логіки тригеру: "якщо активна кнопка «Кошик»" та порожній масив [indicesSelectedModels]
+          // title={(isCartButton === true && indicesSelectedModels.length === 0) ? "" : aircraftsTitle}
+          title={(isCartButton && !indicesSelectedModels.length) ? "" : aircraftsTitle}
         >
           <PlanesList
             // items={aircraftsArr}
@@ -154,4 +157,4 @@ export class App extends Component {
 
 //! Перерендер компонентів відбувається у двох випадках:
 //! 1.Коли до них приходять нові props
-//! 2.Коли змінюється state ✅
+//! 2.Коли змінюється state 

@@ -7,35 +7,40 @@ import { getBgColorCSSModule } from '@/utils';
 
 export function PlanesList({ items, onActiveId }) {
     return (
-        <ul className={css.planesList}>
-            {items.map(item => 
-                <li
-                    className={css[getBgColorCSSModule(item.info.year)]}
-                    key={item.id}
-                >
-                    <Planes
-                        aircraftId={item.id}
-                        aircraftType={item.aircraftType}
-                        wikipediaPage={item.url.wikipedia}
-                        urlMain={item.url.main}
-                        urlPromotional={item.url.promotional}
-                        nameBrief={item.name.brief}
-                        nameFull={item.name.full}
-                        nickname={item.name.nickname}
-                        year={item.info.year}
-                        country={item.info.country}
-                        type={item.info.type}
-                        price={item.info.price}
-                        description={item.info.description}
-                        modelActualImages={item.model.actualImages}
-                        modelActualFullImages={item.model.actualFullImages}
-                        manufacturingStart={item.manufacturing.start}
-                        manufacturingEnd={item.manufacturing.end}
-                        onActiveId={onActiveId}
-                    />
-                </li>
-            )}
-        </ul>
+        <>
+            {items.length
+                ? <ul className={css.planesList}>
+                    {items.map(item => 
+                        <li
+                            className={css[getBgColorCSSModule(item.info.year)]}
+                            key={item.id}
+                        >
+                            <Planes
+                                aircraftId={item.id}
+                                aircraftType={item.aircraftType}
+                                wikipediaPage={item.url.wikipedia}
+                                urlMain={item.url.main}
+                                urlPromotional={item.url.promotional}
+                                nameBrief={item.name.brief}
+                                nameFull={item.name.full}
+                                nickname={item.name.nickname}
+                                year={item.info.year}
+                                country={item.info.country}
+                                type={item.info.type}
+                                price={item.info.price}
+                                description={item.info.description}
+                                modelActualImages={item.model.actualImages}
+                                modelActualFullImages={item.model.actualFullImages}
+                                manufacturingStart={item.manufacturing.start}
+                                manufacturingEnd={item.manufacturing.end}
+                                onActiveId={onActiveId}
+                            />
+                        </li>
+                    )}
+                </ul>
+                : <h2 className={css.invitation}>Додайте товар до кошику...</h2>
+            }
+        </>
     );
 };
 
