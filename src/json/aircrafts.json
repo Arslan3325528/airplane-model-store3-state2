@@ -360,7 +360,7 @@
     }
   },
   {
-    "id": "00010",
+    "id": "0010",
     "aircraftType": "plane",
     "name": {
       "brief": "F-14",
@@ -398,7 +398,7 @@
     }
   },
   {
-    "id": "00011",
+    "id": "0011",
     "aircraftType": "helicopter",
     "name": {
       "brief": "EC-665",
@@ -434,7 +434,7 @@
     }
   },
   {
-    "id": "00012",
+    "id": "0012",
     "aircraftType": "plane",
     "name": {
       "brief": "MiG-15",
@@ -474,7 +474,7 @@
     }
   },
   {
-    "id": "00013",
+    "id": "0013",
     "aircraftType": "biplane",
     "name": {
       "brief": "O2U",
@@ -513,7 +513,7 @@
     }
   },
   {
-    "id": "00014",
+    "id": "0014",
     "aircraftType": "plane",
     "name": {
       "brief": "F-15",
@@ -549,7 +549,7 @@
     }
   },
   {
-    "id": "00015",
+    "id": "0015",
     "aircraftType": "plane",
     "name": {
       "brief": "P-40",
@@ -590,7 +590,7 @@
     }
   },
   {
-    "id": "00016",
+    "id": "0016",
     "aircraftType": "biplane",
     "name": {
       "brief": "Hawk III",
@@ -631,7 +631,7 @@
     }
   },
   {
-    "id": "00017",
+    "id": "0017",
     "aircraftType": "plane",
     "name": {
       "brief": "P-51",
@@ -659,7 +659,7 @@
         "grey": "680",
         "green": 690
       },
-      "actualImages": [
+      "_actualImages": [
         "/airplane-model-store3-state2/images/planes-actual/p-51-comp-1.jpg",
         "/airplane-model-store3-state2/images/planes-actual/p-51-comp-2.jpg",
         "/airplane-model-store3-state2/images/planes-actual/p-51-comp-3.jpg",

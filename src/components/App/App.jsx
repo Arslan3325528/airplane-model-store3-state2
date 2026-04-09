@@ -26,6 +26,7 @@ export class App extends Component {
       activeButton: "allButton"
     });
   };
+
   planeFiltration = () => {
     console.log("Клік в кнопку Літаки");
     const onlyPlanes = aircrafts.filter(aircraft => aircraft.aircraftType === "plane");
@@ -37,6 +38,7 @@ export class App extends Component {
       activeButton: "planeButton"
     });
   };
+
   biplaneFiltration = () => {
     console.log("Клік в кнопку Біплани");
     const onlyBiplane = aircrafts.filter(aircraft => aircraft.aircraftType === "biplane");
@@ -48,6 +50,7 @@ export class App extends Component {
       activeButton: "biplaneButton"
     });
   };
+
   helicopterFiltration = () => {
     console.log("Клік в кнопку Вертольоти");
     const onlyHelicopters = aircrafts.filter(aircraft => aircraft.aircraftType === "helicopter");
@@ -59,6 +62,7 @@ export class App extends Component {
       activeButton: "helicopterButton"
     });
   };
+
   cartFiltration = () => {
     console.log("Клік в кнопку Кошик");
     // const onlyCart = aircrafts.filter(aircraft => aircraft.aircraftType === "helicopter");
@@ -70,6 +74,10 @@ export class App extends Component {
       activeButton: "cartButton"
     });
   };
+
+  getActiveId = (id) => {
+    console.log("ID:", id);
+  }
 
   render() {
     return (
@@ -90,7 +98,7 @@ export class App extends Component {
         >
           <PlanesList
             items={this.state.aircraftsArr}
-            
+            onActiveId={this.getActiveId}
           />
         </Section >
       </>

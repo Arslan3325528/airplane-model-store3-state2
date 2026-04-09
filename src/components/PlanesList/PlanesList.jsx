@@ -5,7 +5,7 @@ import { Planes } from '@/components/Planes/Planes.jsx'; //? Модальні в
 import { getBgColorCSSModule } from '@/utils'; 
 
 
-export function PlanesList({ items }) {
+export function PlanesList({ items, onActiveId }) {
     return (
         <ul className={css.planesList}>
             {items.map(item => 
@@ -14,6 +14,7 @@ export function PlanesList({ items }) {
                     key={item.id}
                 >
                     <Planes
+                        aircraftId={item.id}
                         aircraftType={item.aircraftType}
                         wikipediaPage={item.url.wikipedia}
                         urlMain={item.url.main}
@@ -30,6 +31,7 @@ export function PlanesList({ items }) {
                         modelActualFullImages={item.model.actualFullImages}
                         manufacturingStart={item.manufacturing.start}
                         manufacturingEnd={item.manufacturing.end}
+                        onActiveId={onActiveId}
                     />
                 </li>
             )}

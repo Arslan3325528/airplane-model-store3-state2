@@ -19,6 +19,7 @@ import { iconSize } from '@/constants';
 
 
 export function Planes({
+  aircraftId,
   aircraftType,
   wikipediaPage,
   urlMain = defaultImage, //! Дефолтне зображення
@@ -34,7 +35,8 @@ export function Planes({
   modelActualImages = [template],
   modelActualFullImages = [],
   manufacturingStart,
-  manufacturingEnd
+  manufacturingEnd,
+  onActiveId
 })
 {
   return (
@@ -81,7 +83,8 @@ export function Planes({
         //! Якщо немає в наявності
         className={(modelActualImages[0] === template) ? `${css.planeButton} ${css.buttonDisabled}`: css.planeButton}
         disabled={modelActualImages[0] === template} //! Якщо немає в наявності
-        onClick={() => this.getActiveId(index)}
+        // onClick={() => console.log("ID:", aircraftId)}
+        onClick={() => onActiveId(aircraftId)}
       >
         Додати до кошику
       </button>
@@ -91,6 +94,7 @@ export function Planes({
 
 //! Контроль типу змінних - propTypes
 Planes.propTypes = {
+  aircraftId: PropTypes.string.isRequired,
   aircraftType: PropTypes.string.isRequired,
   wikipediaPage: PropTypes.string.isRequired,
   urlMain: PropTypes.string.isRequired,
@@ -106,5 +110,6 @@ Planes.propTypes = {
   modelActualImages: PropTypes.array,
   modelActualFullImages: PropTypes.array,
   manufacturingStart: PropTypes.string.isRequired,
-  manufacturingEnd: PropTypes.string.isRequired
+  manufacturingEnd: PropTypes.string.isRequired,
+  onActiveId: PropTypes.func.isRequired
 };
