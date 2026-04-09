@@ -13,8 +13,7 @@ export class ColorBox extends Component {
     updateSelectedColorElements = (arr) => {
         this.setState(prevState => ({
             selectedColors: prevState.selectedButtonsIdx.flatMap(item =>
-                arr.filter((el, idx) => idx === item)
-            )
+                arr.filter((el, idx) => idx === item))
         }));
     };
 
