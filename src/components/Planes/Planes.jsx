@@ -23,8 +23,6 @@ export function Planes({
   wikipediaPage,
   urlMain = defaultImage, //! Дефолтне зображення
   urlPromotional,
-  urlActual = [template],
-  urlActualFull = [],
   nameBrief,
   nameFull,
   nickname = "не відомо",
@@ -33,6 +31,8 @@ export function Planes({
   type,
   price = "немає інформації",
   description,
+  modelActualImages = [template],
+  modelActualFullImages = [],
   manufacturingStart,
   manufacturingEnd
 })
@@ -57,7 +57,7 @@ export function Planes({
       <h4 className={css.imageTitles}><CiAirportSign1 size={iconSize.lg} className={css.iconImageTitles} /> Реальна модель:</h4>
       {/* //? Блок зображень без модальних вікон */}
       {/* <div className={css.actualImageBox}>
-        {urlActual.map(item =>
+        {modelActualImages.map(item =>
           <img
             key={item} //* вже унікальний 
             src={item}
@@ -68,8 +68,8 @@ export function Planes({
       </div> */}
       {/* //? Модальні вікна для блока зображень з Yet Another React Lightbox */}
       <ActualImageModal
-        images={urlActual}
-        imagesFull={urlActualFull}
+        images={modelActualImages}
+        imagesFull={modelActualFullImages}
         nameBrief={nameBrief}
         nameFull={nameFull}
         description={description}
@@ -79,8 +79,9 @@ export function Planes({
         type="button"
         // className={css.planeButton}
         //! Якщо немає в наявності
-        className={(urlActual[0] === template) ? `${css.planeButton} ${css.buttonDisabled}`: css.planeButton}
-        disabled={urlActual[0] === template} //! Якщо немає в наявності
+        className={(modelActualImages[0] === template) ? `${css.planeButton} ${css.buttonDisabled}`: css.planeButton}
+        disabled={modelActualImages[0] === template} //! Якщо немає в наявності
+        onClick={() => this.getActiveId(index)}
       >
         Додати до кошику
       </button>
@@ -94,8 +95,6 @@ Planes.propTypes = {
   wikipediaPage: PropTypes.string.isRequired,
   urlMain: PropTypes.string.isRequired,
   urlPromotional: PropTypes.string.isRequired,
-  urlActual: PropTypes.array,
-  urlActualFull: PropTypes.array,
   nameBrief: PropTypes.string.isRequired,
   nameFull: PropTypes.string.isRequired,
   nickname: PropTypes.string.isRequired,
@@ -104,6 +103,8 @@ Planes.propTypes = {
   type: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  modelActualImages: PropTypes.array,
+  modelActualFullImages: PropTypes.array,
   manufacturingStart: PropTypes.string.isRequired,
   manufacturingEnd: PropTypes.string.isRequired
 };

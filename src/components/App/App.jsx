@@ -88,7 +88,10 @@ export class App extends Component {
         <Section
           title={this.state.aircraftsTitle}
         >
-          <PlanesList items={this.state.aircraftsArr} />
+          <PlanesList
+            items={this.state.aircraftsArr}
+            
+          />
         </Section >
       </>
     )

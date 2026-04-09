@@ -18,8 +18,6 @@ export function PlanesList({ items }) {
                         wikipediaPage={item.url.wikipedia}
                         urlMain={item.url.main}
                         urlPromotional={item.url.promotional}
-                        urlActual={item.url.actual}
-                        urlActualFull={item.url.actualFull}
                         nameBrief={item.name.brief}
                         nameFull={item.name.full}
                         nickname={item.name.nickname}
@@ -28,6 +26,8 @@ export function PlanesList({ items }) {
                         type={item.info.type}
                         price={item.info.price}
                         description={item.info.description}
+                        modelActualImages={item.model.actualImages}
+                        modelActualFullImages={item.model.actualFullImages}
                         manufacturingStart={item.manufacturing.start}
                         manufacturingEnd={item.manufacturing.end}
                     />
