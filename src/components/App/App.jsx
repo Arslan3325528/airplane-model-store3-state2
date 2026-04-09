@@ -91,8 +91,9 @@ export class App extends Component {
           : [...prevState.indicesSelectedModels, id].sort((a, b) => a - b)
       };
     });
-  }
+  };
 
+  
   render() {
     const {
       aircraftsArr,
