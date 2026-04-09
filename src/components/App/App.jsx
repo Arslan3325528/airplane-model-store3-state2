@@ -104,12 +104,13 @@ export class App extends Component {
     //! Формуємо масив обраних моделей [selectedModels] не зберігаючи його в state:
     const selectedModels = indicesSelectedModels.flatMap(id => aircrafts.filter((el) => id === el.id));
     //! Рахуємо кількість обраних моделей
-    const NumberOfModels = indicesSelectedModels.length; 
+    const numberOfModels = indicesSelectedModels.length; 
 
+    console.log("----------------------------------------------");
     console.log("ℹ️Mасив індексів обраних моделей :", indicesSelectedModels);
     console.log("Ⓜ️Масив обраних моделей:", selectedModels);
-    console.log("🔢Кількість обраних обраних:", NumberOfModels);
-    console.log("----------------------------------------------");
+    console.log("🔢Кількість обраних моделей:", numberOfModels);
+    console.log("______________________________________________");
 
     return (
       <>
@@ -120,7 +121,8 @@ export class App extends Component {
           onBiplanes={this.biplaneFiltration}
           onHelicopters={this.helicopterFiltration}
           onCart={this.cartFiltration}
-          filterButton={this.state.activeButton} //! Візуалізація активної кнопки
+          filterButton={activeButton} //! візуалізація активної кнопки
+          numberOfSelectedModels={numberOfModels} //! кількість обраних моделей
         />
 
         {/*//! ВСІ */}

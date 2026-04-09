@@ -53,12 +53,12 @@ export class ColorBox extends Component {
         //! Формуємо масив обраних елементів(кольорів) не зберігаючи його в state
         const selectedColors = selectedButtonsIdx.map(idx => colorBoxes[idx]);
         //! Рахуємо кількість обраних кольорів:
-        const NumberOfColors = selectedButtonsIdx.length;
+        const numberOfColors = selectedButtonsIdx.length;
 
         console.log("🔘🆔Активна кнопка:", activeButtonIdx);
         console.log("ℹ️Індекси обраних кнопок:", selectedButtonsIdx);
         console.log("Ⓜ️Масив обраних елементів(кольорів):", selectedColors);
-        console.log("🔢Кількість обраних кольорів:", NumberOfColors);
+        console.log("🔢Кількість обраних кольорів:", numberOfColors);
         console.log("----------------------------------------------");
 
         return (

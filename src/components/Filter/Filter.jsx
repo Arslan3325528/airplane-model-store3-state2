@@ -10,7 +10,8 @@ export function Filter({
   onBiplanes,
   onHelicopters,
   onCart,
-  filterButton, //! Візуалізація активної кнопки
+  filterButton, //! візуалізація активної кнопки
+  numberOfSelectedModels //! кількість обраних моделей
 })
 {
   return (
@@ -58,7 +59,7 @@ export function Filter({
       >
         Кошик&nbsp;&nbsp;
         <span className={css.quantityInCart}>
-          {0}
+          {numberOfSelectedModels}
         </span>
       </button>
     </div>
