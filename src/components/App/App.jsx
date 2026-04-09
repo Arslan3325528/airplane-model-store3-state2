@@ -65,26 +65,21 @@ export class App extends Component {
     });
   };
 
-  //! Формуємо(оновлюємо) масив обраних моделей
-  // updateSelectedModels = () => {
-  //   this.setState(prevState => ({
-  //     selectedModels: prevState.indicesSelectedModels.flatMap(id => aircrafts.filter((el) => id === el.id)),
-  //   }));
-  // };
+  //! Формуємо(оновлюємо) масив обраних моделей [selectedModels] не зберігаючи його в state:
+  updateSelectedModels = () => this.state.indicesSelectedModels.flatMap(id => aircrafts.filter((el) => id === el.id));
 
   cartFiltration = () => {
     console.log("Клік в кнопку Кошик");
-    //! Формуємо масив обраних моделей [selectedModels] не зберігаючи його в state:
-    const selectedModels = this.state.indicesSelectedModels.flatMap(id => aircrafts.filter((el) => id === el.id));
-    console.log("selectedModels:", selectedModels);
+    //! Формуємо(оновлюємо) масив обраних моделей [selectedModels] не зберігаючи його в state:
+    // const selectedModels = this.state.indicesSelectedModels.flatMap(id => aircrafts.filter((el) => id === el.id));
+    // console.log("selectedModels:", selectedModels);
     this.setState({
-      aircraftsArr: selectedModels,
-      // aircraftsArr: this.state.selectedModels,
+      // aircraftsArr: selectedModels,
+      aircraftsArr: this.updateSelectedModels(),
       aircraftsTitle: "Мої обрані моделі",
       activeButton: "allButton", //! візуалізація активної кнопки
       isCartButton: true, //! тригер, "якщо натиснута кнопка «Кошик»"
     });
-    // this.updateSelectedModels();
   };
 
   getActiveId = id => {
@@ -101,12 +96,8 @@ export class App extends Component {
         indicesSelectedModels: exists
           ? prevState.indicesSelectedModels.filter(item => item !== id)
           : [...prevState.indicesSelectedModels, id].sort((a, b) => a - b),
-        // aircraftsArr: this.state.isCartButton
-        //   ? prevState.indicesSelectedModels.flatMap(id => aircrafts.filter((el) => id === el.id))
-        //   : prevState.aircraftsArr
       };
     });
-    // this.updateSelectedModels();
   };
 
 

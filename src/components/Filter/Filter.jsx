@@ -59,6 +59,7 @@ export function Filter({
       >
         Кошик&nbsp;&nbsp;
         <span className={css.quantityInCart}>
+          {/* {88} */}
           {numberOfSelectedModels}
         </span>
       </button>

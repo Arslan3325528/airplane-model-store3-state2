@@ -60,8 +60,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 4vh;
-    height: 4vh;
+    /* width: 4vh;
+    height: 4vh; */
+    width: 40px;
+    height: 40px;
     font-weight: 400;
     font-size: 1.25rem;
     color: #ffff00;
