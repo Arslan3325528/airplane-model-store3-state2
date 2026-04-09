@@ -14,7 +14,7 @@
 .button {
     margin: 20px auto;
     padding: 16px 20px;
-    display: inline-block;
+    display: inline-flex;
     align-items: center;
     font-family: Franklin Gothic Medium, Arial Narrow;
     font-weight: 700;
@@ -50,6 +50,23 @@
 .buttonHelicopterFiltration {
     composes: button;
     border: 6px #9accf5 solid;
+}
+
+.buttonCartFiltration {
+    composes: button;
+    border: 6px #ff5119 solid;
+}
+.quantityInCart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4vh;
+    height: 4vh;
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: #ffff00;
+    border: 3px #ff511999 solid;
+    border-radius: 50%;
 }
 
 /*//! Візуалізація активної кнопки */

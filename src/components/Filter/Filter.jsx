@@ -9,7 +9,8 @@ export function Filter({
   onPlanes,
   onBiplanes,
   onHelicopters,
-  filterButton //! Візуалізація активної кнопки
+  onCart,
+  filterButton, //! Візуалізація активної кнопки
 })
 {
   return (
@@ -22,6 +23,7 @@ export function Filter({
       >
         ВСІ
       </button>
+
       <button
         // className={css.buttonPlaneFiltration}
         className={filterButton === "planeButton" ? `${css.buttonPlaneFiltration} ${css.active}` : css.buttonPlaneFiltration}
@@ -30,6 +32,7 @@ export function Filter({
       >
         Літаки
       </button>
+
       <button
         // className={css.buttonBiplaneFiltration}
         className={filterButton === "biplaneButton" ? `${css.buttonBiplaneFiltration} ${css.active}` : css.buttonBiplaneFiltration}
@@ -38,6 +41,7 @@ export function Filter({
       >
         Біплани
       </button>
+
       <button
         // className={css.buttonHelicopterFiltration}
         className={filterButton === "helicopterButton" ? `${css.buttonHelicopterFiltration} ${css.active}` : css.buttonHelicopterFiltration}
@@ -45,6 +49,17 @@ export function Filter({
         onClick={onHelicopters}
       >
         Вертольоти
+      </button>
+
+      <button
+        className={filterButton === "cartButton" ? `${css.buttonCartFiltration} ${css.active}` : css.buttonCartFiltration}
+        type="button"
+        onClick={onCart}
+      >
+        Кошик&nbsp;&nbsp;
+        <span className={css.quantityInCart}>
+          {0}
+        </span>
       </button>
     </div>
   )
