@@ -15,7 +15,7 @@ export class App extends Component {
     activeButton: "allButton", //! візуалізація активної кнопки
     indicesSelectedModels: [], //! масив індексів обраних моделей
     // selectedModels: [], //! масив обраних моделей
-    isCartButton: false, //! тригер, "якщо натиснута кнопка «Кошик»" 
+    isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»" 
   };
 
   allFiltration = () => {
@@ -25,7 +25,7 @@ export class App extends Component {
       aircraftsArr: aircrafts,
       aircraftsTitle: "Магазин моделей літальних апаратів",
       activeButton: "allButton", //! візуалізація активної кнопки
-      isCartButton: false, //! тригер, "якщо натиснута кнопка «Кошик»"
+      isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»" 
     });
   };
 
@@ -37,7 +37,7 @@ export class App extends Component {
       aircraftsArr: onlyPlanes,
       aircraftsTitle: "Магазин моделей літаків",
       activeButton: "allButton", //! візуалізація активної кнопки
-      isCartButton: false, //! тригер, "якщо натиснута кнопка «Кошик»"
+      isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»" 
     });
   };
 
@@ -49,7 +49,7 @@ export class App extends Component {
       aircraftsArr: onlyBiplane,
       aircraftsTitle: "Магазин моделей біпланів",
       activeButton: "allButton", //! візуалізація активної кнопки
-      isCartButton: false, //! тригер, "якщо натиснута кнопка «Кошик»"
+      isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»" 
     });
   };
 
@@ -61,7 +61,7 @@ export class App extends Component {
       aircraftsArr: onlyHelicopters,
       aircraftsTitle: "Магазин моделей вертольотів",
       activeButton: "allButton", //! візуалізація активної кнопки
-      isCartButton: false, //! тригер, "якщо натиснута кнопка «Кошик»"
+      isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»" 
     });
   };
 
@@ -75,10 +75,10 @@ export class App extends Component {
     // console.log("selectedModels:", selectedModels);
     this.setState({
       // aircraftsArr: selectedModels,
-      aircraftsArr: this.updateSelectedModels(),
+      // aircraftsArr: this.updateSelectedModels(), //! вже не треба, якщо є isCartButton
       aircraftsTitle: "Мої обрані моделі",
       activeButton: "allButton", //! візуалізація активної кнопки
-      isCartButton: true, //! тригер, "якщо натиснута кнопка «Кошик»"
+      isCartButton: true, //! тригер: "якщо активна кнопка «Кошик»" 
     });
   };
 
@@ -108,11 +108,12 @@ export class App extends Component {
       activeButton, //! візуалізація активної кнопки
       indicesSelectedModels, //! масив індексів обраних моделей
       // selectedModels //! масив обраних моделей 
-      isCartButton //! тригер, "якщо натиснута кнопка «Кошик»" 
+      isCartButton //! тригер: "якщо активна кнопка «Кошик»" 
     } = this.state; 
 
-    //! Формуємо масив обраних моделей [selectedModels] не зберігаючи його в state:
-    const selectedModels = indicesSelectedModels.flatMap(id => aircrafts.filter((el) => id === el.id));
+    //! Формуємо(оновлюємо) масив обраних моделей [selectedModels] не зберігаючи його в state:
+    // const selectedModels = indicesSelectedModels.flatMap(id => aircrafts.filter((el) => id === el.id));
+    const selectedModels = this.updateSelectedModels();
     //! Рахуємо кількість обраних моделей
     const numberOfModels = indicesSelectedModels.length; 
 
@@ -141,7 +142,8 @@ export class App extends Component {
         >
           <PlanesList
             // items={aircraftsArr}
-            items={isCartButton ? selectedModels : aircraftsArr}
+            //! використання логіки тригеру: "якщо активна кнопка «Кошик»" 
+            items={isCartButton ? selectedModels : aircraftsArr} 
             onActiveId={this.getActiveId}
           />
         </Section >
