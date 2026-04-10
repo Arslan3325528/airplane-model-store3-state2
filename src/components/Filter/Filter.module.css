@@ -70,6 +70,9 @@
     border: 3px #ff511999 solid;
     border-radius: 50%;
 }
+.notEmpty {
+    background-color: #ff511999;
+}
 
 /*//! Візуалізація активної кнопки */
 .active {

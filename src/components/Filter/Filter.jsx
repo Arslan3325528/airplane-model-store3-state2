@@ -58,7 +58,11 @@ export function Filter({
         onClick={onCart}
       >
         Кошик&nbsp;&nbsp;
-        <span className={css.quantityInCart}>
+        <span
+          // className={css.quantityInCart}
+          //! Зміна кольору фону, якщо коши не пустий
+          className={numberOfSelectedModels ? `${css.quantityInCart} ${css.notEmpty}` : css.quantityInCart}
+        >
           {/* {88} */}
           {numberOfSelectedModels}
         </span>
