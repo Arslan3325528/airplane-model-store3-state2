@@ -102,7 +102,7 @@ export class ColorBox extends Component {
                     <p className={css.colorBoxDescription}>
                         Кількість обраних кольорів:
                         <span className={css.colorBoxSelectedColor}>
-                            {NumberOfColors}
+                            {numberOfColors}
                         </span>
                     </p>                   
                     <div className={css.selectedColorsBox}>
