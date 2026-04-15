@@ -273,7 +273,7 @@
       "colorsPrice": {
         "main": 570
         },
-      "actualImages": [
+      "_actualImages": [
         "/airplane-model-store3-state2/images/planes-actual/j-35-comp-1.jpg",
         "/airplane-model-store3-state2/images/planes-actual/j-35-comp-2.jpg",
         "/airplane-model-store3-state2/images/planes-actual/j-35-comp-3.jpg",
@@ -540,7 +540,7 @@
       "colorsPrice": {
         "main": 370
       },
-      "actualImages": [
+      "_actualImages": [
         "/airplane-model-store3-state2/images/planes-actual/f-15-comp-1.jpg",
         "/airplane-model-store3-state2/images/planes-actual/f-15-comp-2.jpg",
         "/airplane-model-store3-state2/images/planes-actual/f-15-comp-3.jpg",

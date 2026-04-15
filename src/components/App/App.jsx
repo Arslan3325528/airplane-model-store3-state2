@@ -8,9 +8,23 @@ import aircrafts from '@/json/aircrafts.json';
 
 
 //! Приклад початковогоо сортування за полем name.brief
-aircrafts.sort((a, b) =>
-  a.name.brief.localeCompare(b.name.brief)
-);
+aircrafts.sort((a, b) => a.name.brief.localeCompare(b.name.brief));
+//! Приклад початковогоо сортування за полем info.year
+// aircrafts.sort((a, b) => a.info.year - b.info.year);
+
+//! Сортування, в якому моделі, яких немає в наявності знаходяться в кінці списку
+console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++");
+const yes = aircrafts.filter(item => item.model.actualImages);
+const no = aircrafts.filter(item => !item.model.actualImages);
+console.log("✅Є наявності", yes);
+console.log("❌Немає в наявності", no);
+
+aircrafts.splice(0, aircrafts.length);
+console.log("0️⃣aircrafts__Після очищення:", aircrafts);
+
+aircrafts.push(...yes, ...no);
+console.log("🆗aircrafts__Після кінцевого сортування:", aircrafts);
+console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
 //! Компонент-клас
 export class App extends Component {
