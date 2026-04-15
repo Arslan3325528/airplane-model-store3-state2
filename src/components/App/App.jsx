@@ -7,9 +7,9 @@ import { Filter } from '@/components/Filter/Filter.jsx';
 import aircrafts from '@/json/aircrafts.json';
 
 
-//! Приклад початковогоо сортування за полем name.brief
+//! Приклад початкового сортування на ім'я (за полем name.brief)
 aircrafts.sort((a, b) => a.name.brief.localeCompare(b.name.brief));
-//! Приклад початковогоо сортування за полем info.year
+//! Приклад початкового сортування за роком створення (за полем info.year)
 // aircrafts.sort((a, b) => a.info.year - b.info.year);
 
 //! Сортування, в якому моделі, яких немає в наявності знаходяться в кінці списку
