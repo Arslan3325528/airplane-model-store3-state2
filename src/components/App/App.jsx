@@ -19,6 +19,32 @@ export class App extends Component {
     totalTypes: aircrafts.length, //! кількість типів ЛА (всіх літальних апаратів)
   };
 
+  //! Формуємо загальну кількість моделей <totalModels> виходячи з наявності фактичної ціни:
+  //todo-1
+  // getTotalModels = () => {
+  //   return aircrafts.reduce((previousValue, element, index, array) => {
+  //     const valuesArr = Object.values(element.model.colorsPrice);
+  //     const totalAircraftSameType = valuesArr.filter(item => Number(item)).length;
+  //     let total = previousValue + totalAircraftSameType;
+
+  //     console.log("totalAircraftSameType:", totalAircraftSameType); //!
+  //     console.log("valuesArr:", valuesArr); //!
+  //     console.log("total:", total); //!
+  //     console.log("---------------------------------");
+  //     return total;
+  //   }, 0);
+  // };
+  //todo-2
+  // getTotalModels = () => aircrafts.reduce((previousValue, element) => {
+  //     return previousValue + Object.values(element.model.colorsPrice).filter(item => Number(item)).length;
+  // }, 0);
+  //todo-3
+  getTotalModels = () =>
+    aircrafts.reduce((previousValue, element) =>
+      previousValue + Object.values(element.model.colorsPrice).filter(item => Number(item)).length, 0);
+
+
+
   allFiltration = () => {
     console.log("Клік в кнопку ВСІ");
     console.log("allAircrafts:", aircrafts);
@@ -29,6 +55,7 @@ export class App extends Component {
       isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»" 
       totalTypes: aircrafts.length, //! кількість типів ЛА (всіх літальних апаратів)
     });
+    console.log("✈️✈️✈️totalAircraftSameType:", this.getTotalModels()); //! тимчасово
   };
 
   planeFiltration = () => {
