@@ -38,7 +38,6 @@ export function Section({
                 Загальна кількість моделей:&nbsp;
                 <span>
                   {totalModels}
-                  {/* {isCartOn ? numberOfSelectedModels : totalModels} */}
                 </span>
               </h3>
             </div>}

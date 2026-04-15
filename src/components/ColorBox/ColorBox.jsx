@@ -50,7 +50,7 @@ export class ColorBox extends Component {
         const { colorBoxes } = this.props; //! масив об'єктів всіх елементів(кольорів)
         const { activeButtonIdx, selectedButtonsIdx } = this.state;
 
-        //! Формуємо масив обраних елементів(кольорів) не зберігаючи його в state
+        //! Формуємо масив обраних елементів(кольорів) не зберігаючи його в state:
         const selectedColors = selectedButtonsIdx.map(idx => colorBoxes[idx]);
         //! Рахуємо кількість обраних кольорів:
         const numberOfColors = selectedButtonsIdx.length;

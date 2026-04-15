@@ -7,16 +7,41 @@ import { Filter } from '@/components/Filter/Filter.jsx';
 import aircrafts from '@/json/aircrafts.json';
 
 
+//! Приклад початковогоо сортування за полем name.brief
+aircrafts.sort((a, b) =>
+  a.name.brief.localeCompare(b.name.brief)
+);
+
 //! Компонент-клас
 export class App extends Component {
   state = {
     aircraftsArr: aircrafts,
     aircraftsTitle: "Магазин моделей літальних апаратів",
     activeButton: "allButton", //! візуалізація активної кнопки
-    indicesSelectedModels: [], //! масив індексів обраних моделей
+    // indicesSelectedModels: [], //! масив індексів обраних моделей
+    //! 1.localStorage - Ініціалізація state з localStorage
+    indicesSelectedModels: JSON.parse(localStorage.getItem("selectedModels")) || [], //! масив індексів обраних моделей
     // selectedModels: [], //! масив обраних моделей
     isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»"
     // totalTypes: aircrafts.length, //! кількість типів ЛА (всіх літальних апаратів)
+  };
+
+  //! 2.localStorage - Створення запису в localStorage під час першого запуску якщо його немає
+  componentDidMount() {
+    const saved = localStorage.getItem("selectedModels");
+    if (!saved) {
+      localStorage.setItem("selectedModels", JSON.stringify([]));
+    }
+  };
+
+  //! 3.localStorage - Оновлення(синхронізація) localStorage при кожній зміні indicesSelectedModels
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.indicesSelectedModels !== this.state.indicesSelectedModels) {
+      localStorage.setItem(
+        "selectedModels",
+        JSON.stringify(this.state.indicesSelectedModels)
+      );
+    }
   };
 
   //! Рахуємо загальну кількість моделей <totalModels> виходячи з наявності фактичної ціни:
@@ -42,7 +67,6 @@ export class App extends Component {
   // getTotalModels = () =>
   //   aircrafts.reduce((previousValue, element) =>
   //     previousValue + Object.values(element.model.colorsPrice).filter(item => Number(item)).length, 0);
-
 
   allFiltration = () => {
     console.log("Клік в кнопку ВСІ");
@@ -97,7 +121,11 @@ export class App extends Component {
   };
 
   //! Формуємо(оновлюємо) масив обраних моделей [selectedModels] не зберігаючи його в state:
-  updateSelectedModels = () => this.state.indicesSelectedModels.flatMap(id => aircrafts.filter((el) => id === el.id));
+  // updateSelectedModels = () => this.state.indicesSelectedModels.flatMap(id => aircrafts.filter((el) => id === el.id)); //! без сортування
+  updateSelectedModels = () =>
+    this.state.indicesSelectedModels.flatMap(id =>
+      aircrafts.filter((el) => id === el.id))
+      .sort((a, b) =>a.name.brief.localeCompare(b.name.brief)); //! з сортуванням за полем "name.brief"
 
   cartFiltration = () => {
     console.log("Клік в кнопку Кошик");
@@ -127,7 +155,7 @@ export class App extends Component {
         indicesSelectedModels: exists
           ? prevState.indicesSelectedModels.filter(item => item !== id)
           // : [...prevState.indicesSelectedModels, id] //! без сортування
-          : [...prevState.indicesSelectedModels, id].sort((a, b) => a - b) //! з сортуванням
+          : [...prevState.indicesSelectedModels, id].sort((a, b) => a - b) //! сортування за id
       };
     });
   };
@@ -179,7 +207,7 @@ export class App extends Component {
         {/*//! ВСІ */}
         <Section
           // title={aircraftsTitle}
-          //! використання логіки тригеру: "якщо активна кнопка «Кошик»" та порожній масив [indicesSelectedModels]
+          //! Використання логіки тригеру: "якщо активна кнопка «Кошик»" та порожній масив [indicesSelectedModels]
           //? title={(isCartButton === true && indicesSelectedModels.length === 0) ? "" : aircraftsTitle}
           //? або:
           title={(isCartButton && !indicesSelectedModels.length) ? "" : aircraftsTitle}
@@ -190,7 +218,7 @@ export class App extends Component {
         >
           <PlanesList
             // items={aircraftsArr}
-            //! використання логіки тригеру: "якщо активна кнопка «Кошик»" 
+            //! Використання логіки тригеру: "якщо активна кнопка «Кошик»" 
             items={isCartButton ? selectedModels : aircraftsArr} 
             indicesArray={indicesSelectedModels}
             onActiveId={this.getActiveId}
@@ -203,4 +231,4 @@ export class App extends Component {
 
 //! Перерендер компонентів відбувається у двох випадках:
 //! 1.Коли до них приходять нові props
-//! 2.Коли змінюється state 
+//! 2.Коли змінюється state

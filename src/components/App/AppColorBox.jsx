@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-
+// import React, { Component } from "react";
 import { ColorBox } from '@/components/ColorBox/ColorBox.jsx';
 
 
@@ -13,15 +12,13 @@ const colorBoxOptions = [
   { label: 'violet', color: '#ee82ee' },
 ];
 
-//! Компонент-клас
-export class AppColorBox extends Component {
-  render() {
+//! Звичайний компонент
+export function AppColorBox() {
     return (
       <ColorBox colorBoxes={colorBoxOptions}/>
     )
-  }
 };
 
 //! Перерендер компонентів відбувається у двох випадках:
 //! 1.Коли до них приходять нові props
-//! 2.Коли змінюється state ✅
+//! 2.Коли змінюється state
