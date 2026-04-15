@@ -6,6 +6,7 @@ export function Section({
   isOn = true,
   title,
   allTypes,
+  totalModels,
   numberOfSelectedModels,
   isCartOn,
   bgColor = "unset",
@@ -31,6 +32,13 @@ export function Section({
                 Кількість типів ЛА:&nbsp;
                 <span>
                   {isCartOn ? numberOfSelectedModels : allTypes}
+                </span>
+              </h3>
+              <h3 className={css.titleTotalModels}>
+                Загальна кількість моделей:&nbsp;
+                <span>
+                  {totalModels}
+                  {/* {isCartOn ? numberOfSelectedModels : totalModels} */}
                 </span>
               </h3>
             </div>}

@@ -34,7 +34,7 @@
 
 .titleLugrasimoBold {
     composes: lugrasimoBold;
-    margin-bottom: 191px;
+    margin-bottom: 119px;
     font-size: 60px;
     text-align: center;
     /* color: #f7ffbc; */
@@ -42,9 +42,17 @@
     text-shadow: 3px 3px 3px #ffdac1;
 }
 
-.titleTotalTypes {
+.titleTotal {
     font-size: 45px;
     text-align: center;
     color: #f7ffbc;
-    text-shadow: 3px 3px 3px #fe7519;
+    text-shadow: 3px 3px 3px #ff0000;
+}
+.titleTotalTypes {
+    composes: titleTotal;
+    margin-bottom: 19px;
+}
+
+.titleTotalModels {
+    composes: titleTotal;
 }

@@ -16,10 +16,10 @@ export class App extends Component {
     indicesSelectedModels: [], //! масив індексів обраних моделей
     // selectedModels: [], //! масив обраних моделей
     isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»"
-    totalTypes: aircrafts.length, //! кількість типів ЛА (всіх літальних апаратів)
+    // totalTypes: aircrafts.length, //! кількість типів ЛА (всіх літальних апаратів)
   };
 
-  //! Формуємо загальну кількість моделей <totalModels> виходячи з наявності фактичної ціни:
+  //! Рахуємо загальну кількість моделей <totalModels> виходячи з наявності фактичної ціни:
   //todo-1
   // getTotalModels = () => {
   //   return aircrafts.reduce((previousValue, element, index, array) => {
@@ -39,10 +39,9 @@ export class App extends Component {
   //     return previousValue + Object.values(element.model.colorsPrice).filter(item => Number(item)).length;
   // }, 0);
   //todo-3
-  getTotalModels = () =>
-    aircrafts.reduce((previousValue, element) =>
-      previousValue + Object.values(element.model.colorsPrice).filter(item => Number(item)).length, 0);
-
+  // getTotalModels = () =>
+  //   aircrafts.reduce((previousValue, element) =>
+  //     previousValue + Object.values(element.model.colorsPrice).filter(item => Number(item)).length, 0);
 
 
   allFiltration = () => {
@@ -53,9 +52,9 @@ export class App extends Component {
       aircraftsTitle: "Магазин моделей літальних апаратів",
       activeButton: "allButton", //! візуалізація активної кнопки
       isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»" 
-      totalTypes: aircrafts.length, //! кількість типів ЛА (всіх літальних апаратів)
+      // totalTypes: aircrafts.length, //! кількість типів ЛА (всіх літальних апаратів)
     });
-    console.log("✈️✈️✈️totalAircraftSameType:", this.getTotalModels()); //! тимчасово
+    // console.log("✈️✈️✈️totalModels:", this.getTotalModels()); //! тимчасово
   };
 
   planeFiltration = () => {
@@ -67,7 +66,7 @@ export class App extends Component {
       aircraftsTitle: "Магазин моделей літаків",
       activeButton: "planeButton", //! візуалізація активної кнопки
       isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»"
-      totalTypes: onlyPlanes.length, //! кількість типів ЛА (літаків)
+      // totalTypes: onlyPlanes.length, //! кількість типів ЛА (літаків)
     });
   };
 
@@ -80,7 +79,7 @@ export class App extends Component {
       aircraftsTitle: "Магазин моделей біпланів",
       activeButton: "biplaneButton", //! візуалізація активної кнопки
       isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»"
-      totalTypes: onlyBiplane.length, //! кількість типів ЛА (біпланів)
+      // totalTypes: onlyBiplane.length, //! кількість типів ЛА (біпланів)
     });
   };
 
@@ -93,7 +92,7 @@ export class App extends Component {
       aircraftsTitle: "Магазин моделей вертольотів",
       activeButton: "helicopterButton", //! візуалізація активної кнопки
       isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»"
-      totalTypes: onlyHelicopters.length, //! кількість типів ЛА (вертольотів)
+      // totalTypes: onlyHelicopters.length, //! кількість типів ЛА (вертольотів)
     });
   };
 
@@ -102,7 +101,7 @@ export class App extends Component {
 
   cartFiltration = () => {
     console.log("Клік в кнопку Кошик");
-    //! Формуємо(оновлюємо) масив обраних моделей [selectedModels] не зберігаючи його в state:
+    // Формуємо(оновлюємо) масив обраних моделей [selectedModels] не зберігаючи його в state:
     // const selectedModels = this.state.indicesSelectedModels.flatMap(id => aircrafts.filter((el) => id === el.id));
     // console.log("selectedModels:", selectedModels);
     this.setState({
@@ -142,11 +141,17 @@ export class App extends Component {
       indicesSelectedModels, //! масив індексів обраних моделей
       // selectedModels //! масив обраних моделей 
       isCartButton, //! тригер: "якщо активна кнопка «Кошик»"
-      totalTypes //! кількість типів ЛА 
+      // totalTypes //! кількість типів ЛА 
+    } = this.state;
 
-    } = this.state; 
+    //! Рахуємо кількість типів ЛА
+    const totalTypes = aircraftsArr.length;
+    //! Рахуємо загальну кількість моделей <totalModels> виходячи з наявності фактичної ціни
+    const getTotalModels = (arr) =>
+      arr.reduce((previousValue, element) =>
+        previousValue + Object.values(element.model.colorsPrice).filter(item => Number(item)).length, 0);
 
-    //! Формуємо(оновлюємо) масив обраних моделей [selectedModels] не зберігаючи його в state:
+    //! Формуємо(оновлюємо) масив обраних моделей [selectedModels]
     // const selectedModels = indicesSelectedModels.flatMap(id => aircrafts.filter((el) => id === el.id));
     const selectedModels = this.updateSelectedModels();
     //! Рахуємо кількість обраних моделей
@@ -175,9 +180,11 @@ export class App extends Component {
         <Section
           // title={aircraftsTitle}
           //! використання логіки тригеру: "якщо активна кнопка «Кошик»" та порожній масив [indicesSelectedModels]
-          // title={(isCartButton === true && indicesSelectedModels.length === 0) ? "" : aircraftsTitle}
+          //? title={(isCartButton === true && indicesSelectedModels.length === 0) ? "" : aircraftsTitle}
+          //? або:
           title={(isCartButton && !indicesSelectedModels.length) ? "" : aircraftsTitle}
           allTypes={totalTypes} //! кількість типів ЛА
+          totalModels={isCartButton ? getTotalModels(selectedModels) : getTotalModels(aircraftsArr)} //! загальна кількість моделей 
           numberOfSelectedModels={numberOfModels} //! кількість обраних моделей
           isCartOn={isCartButton} //! тригер: "якщо активна кнопка «Кошик»"
         >
