@@ -15,7 +15,8 @@ export class App extends Component {
     activeButton: "allButton", //! візуалізація активної кнопки
     indicesSelectedModels: [], //! масив індексів обраних моделей
     // selectedModels: [], //! масив обраних моделей
-    isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»" 
+    isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»"
+    totalTypes: aircrafts.length, //! кількість типів ЛА (всіх літальних апаратів)
   };
 
   allFiltration = () => {
@@ -26,6 +27,7 @@ export class App extends Component {
       aircraftsTitle: "Магазин моделей літальних апаратів",
       activeButton: "allButton", //! візуалізація активної кнопки
       isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»" 
+      totalTypes: aircrafts.length, //! кількість типів ЛА (всіх літальних апаратів)
     });
   };
 
@@ -37,7 +39,8 @@ export class App extends Component {
       aircraftsArr: onlyPlanes,
       aircraftsTitle: "Магазин моделей літаків",
       activeButton: "planeButton", //! візуалізація активної кнопки
-      isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»" 
+      isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»"
+      totalTypes: onlyPlanes.length, //! кількість типів ЛА (літаків)
     });
   };
 
@@ -49,7 +52,8 @@ export class App extends Component {
       aircraftsArr: onlyBiplane,
       aircraftsTitle: "Магазин моделей біпланів",
       activeButton: "biplaneButton", //! візуалізація активної кнопки
-      isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»" 
+      isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»"
+      totalTypes: onlyBiplane.length, //! кількість типів ЛА (біпланів)
     });
   };
 
@@ -61,7 +65,8 @@ export class App extends Component {
       aircraftsArr: onlyHelicopters,
       aircraftsTitle: "Магазин моделей вертольотів",
       activeButton: "helicopterButton", //! візуалізація активної кнопки
-      isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»" 
+      isCartButton: false, //! тригер: "якщо активна кнопка «Кошик»"
+      totalTypes: onlyHelicopters.length, //! кількість типів ЛА (вертольотів)
     });
   };
 
@@ -109,7 +114,9 @@ export class App extends Component {
       activeButton, //! візуалізація активної кнопки
       indicesSelectedModels, //! масив індексів обраних моделей
       // selectedModels //! масив обраних моделей 
-      isCartButton //! тригер: "якщо активна кнопка «Кошик»" 
+      isCartButton, //! тригер: "якщо активна кнопка «Кошик»"
+      totalTypes //! кількість типів ЛА 
+
     } = this.state; 
 
     //! Формуємо(оновлюємо) масив обраних моделей [selectedModels] не зберігаючи його в state:
@@ -143,6 +150,9 @@ export class App extends Component {
           //! використання логіки тригеру: "якщо активна кнопка «Кошик»" та порожній масив [indicesSelectedModels]
           // title={(isCartButton === true && indicesSelectedModels.length === 0) ? "" : aircraftsTitle}
           title={(isCartButton && !indicesSelectedModels.length) ? "" : aircraftsTitle}
+          allTypes={totalTypes} //! кількість типів ЛА
+          numberOfSelectedModels={numberOfModels} //! кількість обраних моделей
+          isCartOn={isCartButton} //! тригер: "якщо активна кнопка «Кошик»"
         >
           <PlanesList
             // items={aircraftsArr}

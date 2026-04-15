@@ -5,6 +5,9 @@ import css from "./Section.module.css";
 export function Section({
   isOn = true,
   title,
+  allTypes,
+  numberOfSelectedModels,
+  isCartOn,
   bgColor = "unset",
   children
 })
@@ -24,6 +27,12 @@ export function Section({
           {title &&
             <div className={css.bgTitleBox}>
               <h2 className={css.titleLugrasimoBold}>{title}</h2>
+              <h3 className={css.titleTotalTypes}>
+                Кількість типів ЛА:&nbsp;
+                <span>
+                  {isCartOn ? numberOfSelectedModels : allTypes}
+                </span>
+              </h3>
             </div>}
           {children}
         </section>
