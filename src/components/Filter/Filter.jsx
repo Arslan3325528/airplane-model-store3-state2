@@ -60,7 +60,7 @@ export function Filter({
         Кошик&nbsp;&nbsp;
         <span
           // className={css.quantityInCart}
-          //! Зміна кольору фону, якщо коши не пустий
+          //! Зміна кольору фону, якщо кошик не пустий
           className={numberOfSelectedModels ? `${css.quantityInCart} ${css.notEmpty}` : css.quantityInCart}
         >
           {/* {88} */}
