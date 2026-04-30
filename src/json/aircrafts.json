@@ -17,7 +17,7 @@
     "url": {
       "wikipedia": "https://ru.wikipedia.org/wiki/Chance_Vought_F4U_Corsair",
       "main": "https://upload.wikimedia.org/wikipedia/commons/6/66/Vought_F4U_Corsair_%28USMC%29.jpg",
-      "promotional": "https://lh3.googleusercontent.com/pw/AP1GczNC2YhrkKpLYDtw-WUt3DukIrTjJG9nPZk4UsMWXwcvdzPnqPOX7jxgFwVqH8yd2VWeR0t-XmnI9eH0-1-TtsFHrdqxvi66gc04vajWr7E3rwmKEt9iVPuJtxEoOoBXxW9G_zFH6CBivik0nkhJ0PyE=w1395-h1133-s-no-gm?authuser=0"
+      "promotional": "https://photos.fife.usercontent.google.com/pw/AP1GczObmTXJOkI3nAEo71vhfoEZ10LCer2YUs1LjjDcs7CAVZycImC77_Tc=w1354-h938-s-no-gm?authuser=0"
     },
     "manufacturing": {
       "start": "1940-01-01T00:00:00",
@@ -499,7 +499,7 @@
     "url": {
       "wikipedia": "https://en.wikipedia.org/wiki/Vought_O2U_Corsair",
       "main": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Vought_O2U.jpg",
-      "promotional": "https://lh3.googleusercontent.com/pw/AP1GczNnDp7_Y7veh7R_Dr133NFJTTOtSRlbv2W4fk2iYsYEIbA5r8hb3orn6Uqkx7dn6DAU4CD-8ZyvQQqrrcwNZ4fskYW3IMcU_unQoPHAmZXjt4TBqVSb1LRl5LrKHnJJ8HtMDtWmVrpS9qoeVlTi2Lbw=w1380-h1321-s-no-gm?authuser=0"
+      "promotional": "https://photos.fife.usercontent.google.com/pw/AP1GczM3swY6k7XYeMkA7EeD8oYGx4AHE0LdLsTJEU-00F8n8yV0whgu9nP7=w1309-h1222-s-no-gm?authuser=0"
     },
     "manufacturing": {
       "start": "1927-01-01T00:00:00",
@@ -574,7 +574,7 @@
     "url": {
       "wikipedia": "https://ru.wikipedia.org/wiki/Curtiss_P-40",
       "main": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Curtiss_XP-40_in_flight%2C_circa_in_1939.jpg",
-      "promotional": "https://lh3.googleusercontent.com/pw/AP1GczPVUh2QNTe-S7ZnF0ZhsLUFOoiALMpgHzF114m8Dv_V8iLTmTvEZQdPegeDII1QkIcJP-h1z_krpPfhDFawnK3vKsQ8NiAC8qcvCBZcDpWO-xJAnZHDOLX5wDC-haY__w4QWtqjifph2bxJVWD57RUe=w1358-h907-s-no-gm?authuser=0"
+      "promotional": "https://photos.fife.usercontent.google.com/pw/AP1GczOD1-TAISYgg5QJoqtNSH-1dTtcNMVIkjESBWYS_wmH0MtwRy0jq0h2=w1330-h1159-s-no-gm?authuser=0"
     },
     "manufacturing": {
       "start": "1939-01-01T00:00:00",
@@ -650,12 +650,12 @@
       "country": "США",
       "type": "Одномісний винищувач далекого радіусу дії",
       "price": "$50985 ($2500000 — $4000000)",
-      "description": "Був одним із найефективніших та універсальних літаків Другої світової війни. Використовувався як винищувач супроводу далекого радіусу дії. Виконував завдання винищувача-бомбардувальника, пікіруючого бомбардувальника, тактичної розвідки. Мав відмінну швидкість і маневреність на великих висотах."
+      "description": "Був одним із найефективніших та універсальних літаків Другої світової війни. Використовувався як винищувач супроводу далекого радіусу дії. Виконував завдання винищувача-бомбардувальника, пікіруючого бомбардувальника, тактичної розвідки. Мав відмінну швидкість і маневреність на великих висотах"
     },
     "url": {
       "wikipedia": "https://ru.wikipedia.org/wiki/North_American_P-51_Mustang",
       "main": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/P-51-361.jpg/3840px-P-51-361.jpg",
-      "promotional": "https://lh3.googleusercontent.com/pw/AP1GczNP9EQmp6KBSwc0yPvQm6OS50HnrO0P1PfgTAzZaKE9oYiOMKkGqrMd-xueWJyZhHx6lK-3zp-HLJ3ZgatmpWXRVr1MvkoLxl2syrpHSgW7qKJJzdBkp0sJY5E7_I8tukLJxMm0sZvjF0K-N_KaV_ef=w1276-h1293-s-no-gm?authuser=0"
+      "promotional": "https://photos.fife.usercontent.google.com/pw/AP1GczOcv7rlzhlmLgyDbayHU-aw9Pk7HimeaHzmb5O7ImbQ6kptZuiJ3LdN=w1276-h1293-s-no-gm?authuser=0"
     },
     "manufacturing": {
       "start": "1941-01-01T00:00:00",
@@ -664,17 +664,56 @@
     "model": {
       "colorsPrice": {
         "white": 0,
-        "lightSilver": 0,
+        "silverlLight": 0,
         "silver": 0,
-        "darkSilver": "_660",
+        "silverlDark": "_660",
         "grey": "_680",
         "green": 690
       },
-      "_actualImages": [
+      "actualImages": [
         "/airplane-model-store3-state2/images/planes-actual/p-51-comp-1.jpg",
         "/airplane-model-store3-state2/images/planes-actual/p-51-comp-2.jpg",
         "/airplane-model-store3-state2/images/planes-actual/p-51-comp-3.jpg",
         "/airplane-model-store3-state2/images/planes-actual/p-51-comp-4.jpg"
+      ]
+    }
+  },
+  {
+    "id": "0018",
+    "aircraftType": "plane",
+    "name": {
+      "brief": "P-82/F-82",
+      "full": "North American F-82 Twin Mustang",
+      "nickname": "Твин Мустанг («Twin Mustang»)"
+    },
+    "info": {
+      "year": 1945,
+      "country": "США",
+      "type": "Двомісний дальній винищувач",
+      "price": "$215154",
+      "description": "Останній поршневий винищувач, ухвалений на озброєння ВПС США. Виконував завдання: винищувач супроводу, нічний та всепогодний перехоплювач, штурмовик для атак наземних цілей. Двохфюзеляжна схема з двома кабінами дозволяла двом пілотам підміняти один одного в ході багатогодинних перельотів"
+    },
+    "url": {
+      "wikipedia": "https://ru.wikipedia.org/w/index.php?title=North_American_F-82_Twin_Mustang&stable=1",
+      "main": "https://upload.wikimedia.org/wikipedia/commons/f/fb/F82_twin_mustang.jpg",
+      "promotional": "https://photos.fife.usercontent.google.com/pw/AP1GczN8A8Di7EKKFaRGZjHstfgPKTv9dmEshi4DBOpz2zPuZovxPo_clY-Y=w1356-h936-s-no-gm?authuser=0"
+    },
+    "manufacturing": {
+      "start": "1945-01-01T00:00:00",
+      "end": "1949-01-01T00:00:00"
+    },
+    "model": {
+      "colorsPrice": {
+        "silverlLight": 0,
+        "silverlDark": "_800",
+        "green": 0,
+        "black": "_790"
+      },
+      "_actualImages": [
+        "/airplane-model-store3-state2/images/planes-actual/f-82-comp-1.jpg",
+        "/airplane-model-store3-state2/images/planes-actual/f-82-comp-2.jpg",
+        "/airplane-model-store3-state2/images/planes-actual/f-82-comp-3.jpg",
+        "/airplane-model-store3-state2/images/planes-actual/f-82-comp-4.jpg"
       ]
     }
   }
