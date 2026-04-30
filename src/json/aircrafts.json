@@ -666,8 +666,8 @@
         "white": 0,
         "silverlLight": 0,
         "silver": 0,
-        "silverlDark": "_660",
-        "grey": "_680",
+        "silverlDark": 660,
+        "grey": 680,
         "green": 690
       },
       "actualImages": [
