@@ -67,7 +67,6 @@ export class ActualImageModal extends Component {
 
     // console.log("images[0]:", images[0]);
     return (
-      
       <div className={css.actualImageBox}>
         {/*//! Галерея (блок зображень)*/}
         {images.map((img, i) => (
@@ -77,9 +76,17 @@ export class ActualImageModal extends Component {
             alt={nameBrief}
             // className={css.actualImage}
             //! Якщо немає в наявності
-            className={(images[0] === templateImage) ? `${css.actualImage} ${css.outOfStock}` : css.actualImage}
+            className={
+              (images[0] === templateImage)
+                ? `${css.actualImage} ${css.outOfStock}`
+                : css.actualImage
+            }
             // onClick={() => this.openLightbox(i)}
-            onClick={(images[0] === templateImage) ? null : () => this.openLightbox(i)}
+            onClick={
+              (images[0] === templateImage)
+                ? null
+                : () => this.openLightbox(i)
+            }
           />
         ))}
 
@@ -139,5 +146,5 @@ export class ActualImageModal extends Component {
         />
       </div>
     );
-  }
+  };
 };

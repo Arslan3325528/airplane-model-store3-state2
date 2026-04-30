@@ -86,17 +86,22 @@ export function Planes({
           (modelActualImages[0] === template)
             ? `${css.planeButton} ${css.buttonDisabled}` //! якщо немає в наявності
             // : css.planeButton
-            : (indicesArray.includes(aircraftId)) ? `${css.planeButton} ${css.inCart}`: css.planeButton //! якщо доданий в кошик
+            : (indicesArray.includes(aircraftId)) //! якщо доданий в кошик
+              ? `${css.planeButton} ${css.inCart}`
+              : css.planeButton 
         }
-
-        disabled={modelActualImages[0] === template} //! блокування кнопки, якщо немає в наявності
+        //! Бокування кнопки, якщо немає в наявності
+        disabled={modelActualImages[0] === template}
 
         // onClick={() => console.log("ID:", aircraftId)}
         onClick={() => onActiveId(aircraftId)}
       >
         {/* Додати до кошику */}
         {/*//! Зміна стилю кнопки, якщо товар доданий до кошику */}
-        {indicesArray.includes(aircraftId) ? "❌ Видалити із кошика" : "✅ Додати до кошику"}
+        {indicesArray.includes(aircraftId)
+          ? "❌ Видалити із кошика"
+          : "✅ Додати до кошику"
+        }
       </button>
     </>
   );

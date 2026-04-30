@@ -18,7 +18,11 @@ export function Filter({
     <div className={css.filterBox}>
       <button
         // className={css.buttonAllFiltration}
-        className={filterButton === "allButton" ? `${css.buttonAllFiltration} ${css.active}` : css.buttonAllFiltration}
+        className={
+          filterButton === "allButton"
+            ? `${css.buttonAllFiltration} 
+            ${css.active}` : css.buttonAllFiltration
+        }
         type="button"
         onClick={onAll}
       >
@@ -27,7 +31,12 @@ export function Filter({
 
       <button
         // className={css.buttonPlaneFiltration}
-        className={filterButton === "planeButton" ? `${css.buttonPlaneFiltration} ${css.active}` : css.buttonPlaneFiltration}
+        className={
+          filterButton === "planeButton"
+            ? `${css.buttonPlaneFiltration} 
+            ${css.active}`
+            : css.buttonPlaneFiltration
+        }
         type="button"
         onClick={onPlanes}
       >
@@ -36,7 +45,11 @@ export function Filter({
 
       <button
         // className={css.buttonBiplaneFiltration}
-        className={filterButton === "biplaneButton" ? `${css.buttonBiplaneFiltration} ${css.active}` : css.buttonBiplaneFiltration}
+        className={
+          filterButton === "biplaneButton"
+            ? `${css.buttonBiplaneFiltration} 
+            ${css.active}` : css.buttonBiplaneFiltration
+        }
         type="button"
         onClick={onBiplanes}
       >
@@ -45,7 +58,11 @@ export function Filter({
 
       <button
         // className={css.buttonHelicopterFiltration}
-        className={filterButton === "helicopterButton" ? `${css.buttonHelicopterFiltration} ${css.active}` : css.buttonHelicopterFiltration}
+        className={
+          filterButton === "helicopterButton"
+            ? `${css.buttonHelicopterFiltration} 
+            ${css.active}` : css.buttonHelicopterFiltration
+        }
         type="button"
         onClick={onHelicopters}
       >
@@ -53,7 +70,11 @@ export function Filter({
       </button>
 
       <button
-        className={filterButton === "cartButton" ? `${css.buttonCartFiltration} ${css.active}` : css.buttonCartFiltration}
+        className={
+          filterButton === "cartButton"
+            ? `${css.buttonCartFiltration} 
+            ${css.active}` : css.buttonCartFiltration
+        }
         type="button"
         onClick={onCart}
       >
@@ -61,7 +82,12 @@ export function Filter({
         <span
           // className={css.quantityInCart}
           //! Зміна кольору фону, якщо кошик не пустий
-          className={numberOfSelectedModels ? `${css.quantityInCart} ${css.notEmpty}` : css.quantityInCart}
+          className={
+            numberOfSelectedModels
+              ? `${css.quantityInCart} 
+              ${css.notEmpty}`
+              : css.quantityInCart
+          }
         >
           {/* {88} */}
           {numberOfSelectedModels}
