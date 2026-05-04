@@ -6,6 +6,8 @@ import { Filter } from '@/components/Filter/Filter.jsx';
 
 import aircrafts from '@/json/aircrafts.json';
 
+import { updateSelectedModels } from '@/utils'; //! формуємо(оновлюємо) масив обраних моделей [selectedModels]
+
 
 //! Приклад початкового сортування на ім'я (за полем name.brief)
 aircrafts.sort((a, b) => a.name.brief.localeCompare(b.name.brief));
@@ -134,12 +136,13 @@ export class App extends Component {
     });
   };
 
+  //! Імпортуємо з @/utils/updateSelectedModels.js
   //! Формуємо(оновлюємо) масив обраних моделей [selectedModels] не зберігаючи його в state:
   // updateSelectedModels = () => this.state.indicesSelectedModels.flatMap(id => aircrafts.filter((el) => id === el.id)); //! без сортування
-  updateSelectedModels = () =>
-    this.state.indicesSelectedModels.flatMap(id =>
-      aircrafts.filter((el) => id === el.id))
-      .sort((a, b) =>a.name.brief.localeCompare(b.name.brief)); //! з сортуванням за полем "name.brief"
+  // updateSelectedModels = () =>
+  //   this.state.indicesSelectedModels.flatMap(id =>
+  //     aircrafts.filter((el) => id === el.id))
+  //     .sort((a, b) =>a.name.brief.localeCompare(b.name.brief)); //! з сортуванням за полем "name.brief"
 
   cartFiltration = () => {
     console.log("Клік в кнопку Кошик");
@@ -188,6 +191,7 @@ export class App extends Component {
 
     //! Рахуємо кількість типів ЛА
     const totalTypes = aircraftsArr.length;
+    
     //! Рахуємо загальну кількість моделей <totalModels> виходячи з наявності фактичної ціни
     const getTotalModels = (arr) =>
       arr.reduce((previousValue, element) =>
@@ -195,7 +199,9 @@ export class App extends Component {
 
     //! Формуємо(оновлюємо) масив обраних моделей [selectedModels]
     // const selectedModels = indicesSelectedModels.flatMap(id => aircrafts.filter((el) => id === el.id));
-    const selectedModels = this.updateSelectedModels();
+    // const selectedModels = this.updateSelectedModels();
+    const selectedModels = updateSelectedModels(indicesSelectedModels, aircrafts); //! якщо імпортуємо
+    
     //! Рахуємо кількість обраних моделей
     const numberOfModels = indicesSelectedModels.length; 
 
