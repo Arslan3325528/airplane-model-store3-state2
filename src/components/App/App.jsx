@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 
+import { Filter } from '@/components/Filter/Filter.jsx';
+import { Sorter } from '@/components/Sorter/Sorter.jsx';
 import { Section } from '@/components/Section/Section.jsx';
 import { PlanesList } from '@/components/PlanesList/PlanesList.jsx';
-import { Filter } from '@/components/Filter/Filter.jsx';
 
 import aircrafts from '@/json/aircrafts.json';
 
@@ -222,6 +223,11 @@ export class App extends Component {
           onCart={this.cartFiltration}
           filterButton={activeButton} //! візуалізація активної кнопки
           numberOfSelectedModels={numberOfModels} //! кількість обраних моделей
+        />
+
+        {/*//!  Sorter */}
+        <Sorter
+          // items={isCartButton ? selectedModels : aircraftsArr}
         />
 
         {/*//! ВСІ */}
