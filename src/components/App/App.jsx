@@ -204,7 +204,7 @@ export class App extends Component {
         console.log("Такого індекса моделі ще немає,тоді ДОДАЄМО його!✅");
       };
       return {
-        inputSearchValue: "",
+        // inputSearchValue: "",
         indicesSelectedModels:
           exists
             ? this.state.indicesSelectedModels.filter(item => item !== id)
