@@ -176,6 +176,7 @@ export class App extends Component {
   //! Обробка кнопок-фільтрів
   cartFiltration = () => {
     console.log("Клік в кнопку Кошик");
+    this.updateSelectedModels();
     // Формуємо(оновлюємо) масив обраних моделей [selectedModels] не зберігаючи його в state:
     // const selectedModels = this.state.indicesSelectedModels.flatMap(id => aircrafts.filter((el) => id === el.id));
     // console.log("selectedModels:", selectedModels);
